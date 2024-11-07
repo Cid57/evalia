@@ -1,0 +1,310 @@
+:root {
+  --primary-color: #6f42c1; /* Violet principal */
+  --hover-color: #5b36a0; /* Violet foncé pour survol */
+  --text-color: #333333;
+  --light-gray: #f8f9fa;
+  --dark-gray: #171c32;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border: none;
+  color: #ffffff;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #5b36a0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Couleur de fond globale pour le corps de la page */
+body {
+  background-color: #f8f9fa;
+}
+
+/* Section de l'en-tête pour la page À propos avec une image de fond */
+.about-hero {
+  background: url("../images/about.jpg");
+  background-position: top; /* Position de l'image en haut */
+  background-size: cover; /* Couvre toute la section */
+  color: #e9eef4; /* Couleur du texte en blanc cassé */
+  height: 60vh; /* Hauteur de la section, ajustable selon le besoin */
+  position: relative;
+}
+
+/* Overlay de couleur sombre pour améliorer la lisibilité du texte sur l'image */
+.about-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(23, 28, 50, 0.5); /* Couche sombre avec transparence */
+  z-index: 0;
+}
+
+/* Couleur des liens de navigation dans la barre de navigation */
+.navbar .nav-link {
+  color: #e9eef4; /* Texte en couleur claire pour la visibilité */
+}
+
+/* Couleur de survol pour les liens de navigation */
+.navbar .nav-link:hover {
+  color: #a166e9; /* Change la couleur au survol */
+}
+
+/* Styles par défaut de la barre de navigation */
+.navbar {
+  transition: background-color 0.3s ease; /* Transition douce pour le changement de couleur */
+}
+
+/* Styles appliqués à la barre de navigation lors du défilement */
+.navbar.scrolled {
+  background-color: rgba(
+    23,
+    28,
+    50,
+    0.9
+  ); /* Couleur de fond semi-transparente */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour donner de la profondeur */
+}
+
+/* Positionnement du contenu de la section about-hero par rapport à l'overlay */
+.about-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Section des fonctionnalités (points forts) avec fond clair */
+.features-section {
+  background-color: #f8f9fa;
+  padding: 4rem 0; /* Espacement en haut et en bas */
+}
+
+/* Style de chaque carte de fonctionnalité */
+.feature-card {
+  background: linear-gradient(
+    145deg,
+    #ffffff,
+    #e0e5ec
+  ); /* Gradient pour un effet 3D */
+  border-radius: 20px; /* Bords arrondis */
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1),
+    -10px -10px 20px rgba(255, 255, 255, 0.7); /* Ombre douce pour effet de profondeur */
+  transition: all 0.3s ease; /* Transition douce pour l'effet de survol */
+  padding: 2rem; /* Espacement interne */
+  height: 100%; /* Prend toute la hauteur disponible */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Alignement du contenu */
+}
+
+/* Effet de survol des cartes de fonctionnalités */
+.feature-card:hover {
+  transform: translateY(-10px); /* Légère élévation au survol */
+  box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.15),
+    -15px -15px 30px rgba(255, 255, 255, 0.9); /* Ombre renforcée */
+}
+
+/* Style du titre de chaque carte de fonctionnalité */
+.feature-title {
+  color: #171c32; /* Couleur foncée */
+  font-weight: 700; /* Texte en gras */
+  font-size: 1.3rem; /* Taille de police */
+  margin-bottom: 1rem;
+  text-transform: uppercase; /* Texte en majuscule */
+}
+
+/* Style du texte des cartes de fonctionnalités */
+.feature-text {
+  color: #4a4a4a; /* Texte en gris foncé */
+  font-size: 0.95rem; /* Taille de police */
+  line-height: 1.6;
+}
+
+/* Icône de chaque fonctionnalité (si utilisée) */
+.feature-icon {
+  font-size: 2rem; /* Taille de l'icône */
+  color: #03a9f4; /* Couleur de l'icône */
+  margin-bottom: 1rem;
+}
+
+/* Section de contact 
+.contact-section {
+  background-color: #f8f9fa;
+  padding: 4rem 0; 
+}
+
+
+.contact-section h2 {
+  color: #171c32; 
+  font-weight: bold; 
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-section p {
+  color: #4a4a4a; 
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+
+.contact-form {
+  background: #ffffff; 
+  border-radius: 15px;
+  padding: 2rem; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+}
+*/
+
+/* Style pour la section de contact */
+.contact-section h2 {
+  color: #171c32; /* Couleur principale pour le titre */
+}
+
+.contact-section p {
+  color: #4a4a4a;
+  width: 100px;
+  width: 400px;
+  margin: auto;
+}
+
+/* Champ de formulaire */
+.contact-form .form-control {
+  background-color: #ffffff;
+  color: #171c32;
+  border: 1px solid #d1d9e6;
+  border-radius: 8px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form .form-control:focus {
+  border-color: #6f42c1; /* Bordure violette au focus */
+  box-shadow: 0 0 5px rgba(111, 66, 193, 0.5); /* Ombre violette */
+}
+
+/* Bouton de soumission */
+.contact-form .btn-primary {
+  background-color: #6f42c1; /* Couleur violette */
+  border-color: #6f42c1;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.contact-form .btn-primary:hover {
+  background-color: #5b36a0; /* Violet légèrement plus foncé pour le hover */
+  border-color: #5b36a0;
+}
+
+/* Espacement et alignement */
+.contact-form label {
+  font-weight: 600;
+  color: #171c32;
+  margin-bottom: 0.5rem;
+}
+
+.contact-form .form-label {
+  font-weight: 600;
+  color: #171c32;
+}
+
+/* Style des labels des champs de formulaire */
+.form-label {
+  font-weight: 600; /* Texte en gras */
+  color: #171c32; /* Couleur foncée */
+  margin-bottom: 0.5rem;
+}
+
+/* Style des champs de saisie dans le formulaire */
+.form-control {
+  border-radius: 8px; /* Coins arrondis */
+  padding: 10px; /* Espacement interne */
+  border: 1px solid #d1d9e6; /* Bordure légère */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05); /* Ombre interne pour un effet de profondeur */
+  transition: box-shadow 0.3s ease; /* Transition pour l'effet de focus */
+}
+
+/* Style des champs de saisie lorsqu'ils sont en focus */
+.form-control:focus {
+  box-shadow: 0 0 5px rgba(125, 66, 235, 0.5); /* Ombre colorée */
+  border-color: #a166e9; /* Couleur de la bordure en bleu clair */
+}
+
+/* Champ de textearea sans redimensionnement */
+textarea.form-control {
+  resize: none;
+}
+
+/* Style des boutons principaux */
+.btn-primary {
+  background-color: var(--primary-color);
+  border: none; /* Pas de bordure */
+  color: white; /* Texte en blanc */
+  padding: 0.75rem 2rem; /* Espacement interne */
+  border-radius: 8px; /* Coins arrondis */
+  font-weight: bold; /* Texte en gras */
+  font-size: 1rem;
+}
+
+/* Couleur du bouton au survol */
+.btn-primary:hover {
+  background-color: #5b36a0;
+}
+
+/* Bas de page */
+.footer {
+  background-color: #171c32;
+  color: #e9eef4;
+  font-size: 0.9rem;
+}
+
+.footer-logo {
+  max-width: 150px;
+  margin-bottom: 10px;
+}
+
+.footer h5 {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.footer ul {
+  padding: 0;
+}
+
+.footer .list-unstyled li,
+.footer-links .list-inline-item a {
+  color: #e9eef4;
+  text-decoration: none;
+}
+
+.footer .list-unstyled li i {
+  margin-right: 5px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+}
+
+.footer-links .list-inline-item a {
+  color: #e9eef4;
+  margin: 0 5px;
+  font-size: 0.9rem;
+}
+
+.footer-links .list-inline-item a:hover {
+  color: #ba92eb;
+}
+
+.footer-bottom p {
+  color: #999;
+  font-size: 0.85rem;
+}

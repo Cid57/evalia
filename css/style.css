@@ -1,0 +1,437 @@
+/* Couleurs mises à jour */
+/*:root {
+  --primary-color: #6f42c1;
+  --text-color: #171c32;
+}
+  */
+
+:root {
+  --primary-color: #6f42c1; /* Violet principal */
+  --hover-color: #5b36a0; /* Violet foncé pour survol */
+  --text-color: #333333;
+  --light-gray: #f8f9fa;
+  --dark-gray: #171c32;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border: none;
+  color: #ffffff;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #5b36a0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+body {
+  background-color: #f8f9fa;
+  box-sizing: border-box;
+}
+
+/*
+.navbar .nav-link {
+  color: #e9eef4;
+  font-weight: 500;
+}
+
+.navbar .nav-link:hover {
+  color: #a166e9;
+  transition: color 0.3s ease;
+}
+
+
+.navbar {
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+
+.navbar.scrolled {
+  background-color: rgba(23, 28, 50, 0.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+*/
+
+/* Couleur de fond initialement transparente */
+.navbar {
+  background-color: rgba(23, 28, 50, 0.3); /* Légèrement visible */
+  transition: background-color 0.3s ease;
+}
+
+/* Fond plus opaque lorsque la page est défilée */
+.navbar.scrolled {
+  background-color: rgba(23, 28, 50, 0.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .nav-link {
+  color: #e9eef4;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.navbar .nav-link:hover {
+  color: #a166e9;
+  transition: color 0.3s ease;
+}
+
+/* Styles de la section d'accueil */
+.hero-section {
+  background: url("../images/evalia2.png") center/cover no-repeat;
+  color: var(--background-color);
+  height: 100vh;
+  position: relative;
+}
+
+.hero-section h1,
+.hero-section p {
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Styles de la section du formulaire de devis */
+.quote-form-section {
+  background-color: var(--text-color);
+  padding: 3rem 0;
+}
+
+.quote-form-section .form-control {
+  max-width: 100%;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: 1px solid var(--primary-color);
+  padding: 10px;
+}
+
+.quote-form-section .form-control::placeholder {
+  color: #6c757d;
+}
+
+.quote-form-section .form-control:focus {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(3, 169, 244, 0.5);
+}
+
+.quote-form-section .btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #fff;
+}
+
+.quote-form-section .btn-primary:hover {
+  background-color: #5b36a0; /* Légèrement plus foncé */
+}
+
+/* Styles pour la section des cartes de formation */
+.training-section {
+  background-color: var(--background-color);
+  font-family: "Roboto", sans-serif;
+  padding: 3rem 0;
+}
+
+.training-section h2 {
+  font-weight: 700;
+  color: var(--text-color);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.training-section p.lead {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+}
+
+/* Styles pour les cartes */
+/*.training-card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+  */
+
+.training-card {
+  background-color: rgba(255, 255, 255, 0.95); /* léger transparent */
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.training-card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.training-card .card-text,
+.training-card .card-title,
+.training-card .card-link {
+  margin-bottom: 10px;
+}
+
+.training-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.training-card .card-img-top {
+  height: 300px;
+  object-fit: cover;
+}
+
+.training-card .card-title {
+  font-weight: 600;
+  color: var(--text-color);
+  font-size: 1.2rem;
+}
+
+.training-card .card-text {
+  color: var(--text-color);
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+/* Style des liens */
+.training-card .card-link {
+  color: var(--primary-color);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.training-card .card-link:hover {
+  color: #5b36a0;
+}
+
+/* Bouton */
+/*.training-card .btn-primary {
+  align-self: center;
+  margin-top: auto;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--background-color);
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+  */
+
+.training-card .btn-primary {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.training-card .btn-primary:hover {
+  background-color: #5b36a0;
+}
+
+/*
+.why-choose-section {
+  margin-top: 50px;
+  background-color: #c9b4f1; 
+  padding: 3rem 0;
+}
+  */
+
+/*
+
+.why-choose-section {
+  background-color: #c9b4f1;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.why-choose-section h2 {
+  color: white;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.why-choose-section p.lead {
+  color: white;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+.why-choose-section .btn-primary {
+  background-color: #6f42c1;
+  font-weight: 600;
+}
+
+.why-choose-section .btn-primary:hover {
+  background-color: #572d91;
+}
+
+*/
+
+.why-choose-section {
+  background: linear-gradient(135deg, #9c8ff0, #d1c4f4); /* Dégradé subtil */
+  padding: 4rem 0;
+  color: #ffffff; /* Texte blanc pour contraste */
+  text-align: center;
+}
+
+.why-choose-section h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Ombre pour le titre */
+}
+
+.why-choose-section p.lead {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+  color: #f2f2f2; /* Teinte plus douce */
+}
+
+.why-choose-section .btn-primary {
+  background-color: #6f42c1;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.why-choose-section .btn-primary:hover {
+  background-color: #5b36a0;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05); /* Zoom léger au survol */
+}
+
+.separator {
+  height: 4px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* Ligne de séparation semi-transparente */
+  margin: 2rem auto;
+  width: 80%;
+  border-radius: 2px;
+}
+
+/* debut  */
+
+.info-section {
+  background-color: #f8f9fa;
+}
+
+.info-box {
+  border: 1px solid #e0e0e0;
+  border-radius: 15px;
+  padding: 2rem;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  min-height: 200px;
+}
+
+.info-box:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+}
+
+.info-icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+}
+.info-box .info-icon {
+  color: #6f42c1;
+}
+
+.info-title {
+  font-size: 1.5rem; /* Augmente légèrement la taille de la police */
+  font-weight: 700;
+  color: #333;
+  margin-top: 1rem;
+}
+
+.info-box p {
+  font-size: 1rem; /* Ajustez la taille pour une meilleure lisibilité */
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+/*          */
+
+/* Bas de page */
+.footer {
+  background-color: #171c32;
+  color: #e9eef4;
+  font-size: 0.9rem;
+  padding: 2rem 0;
+}
+
+.footer-logo {
+  max-width: 150px;
+  margin-bottom: 10px;
+}
+
+.footer h5 {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.footer ul {
+  padding: 0;
+}
+
+.footer .list-unstyled li,
+.footer-links .list-inline-item a {
+  color: #e9eef4;
+  text-decoration: none;
+}
+
+.footer .list-unstyled li i {
+  margin-right: 5px;
+}
+
+.footer .list-unstyled li {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+}
+
+.footer-links .list-inline-item a {
+  color: #e9eef4;
+  margin: 0 5px;
+  font-size: 0.9rem;
+}
+
+.footer-links .list-inline-item a:hover {
+  color: #03a9f4;
+  text-decoration: underline;
+}
+
+.footer-bottom p {
+  color: #999;
+  font-size: 0.85rem;
+}
