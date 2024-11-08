@@ -1,0 +1,148 @@
+/* ========================
+     Variables globales
+   ======================== */
+:root {
+  --primary-color: #6f42c1;
+  --hover-color: #5b36a0;
+  --light-gray: #f8f9fa;
+  --dark-gray: #171c32;
+}
+
+/* ========================
+         Style général
+     ======================== */
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+  background-color: var(--light-gray);
+  color: #333;
+}
+
+/* ========================
+       Conteneur principal
+     ======================== */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+}
+
+/* ========================
+         Lien de retour
+     ======================== */
+.back-link {
+  color: var(--primary-color);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: var(--hover-color);
+  text-decoration: underline;
+}
+
+/* ========================
+        Section de réservation
+     ======================== */
+.booking-title {
+  color: #333;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* ========================
+     Sélection date-heure
+     ======================== */
+.date-time-selection {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================
+        Bouton principal
+     ======================== */
+.btn-primary {
+  background-color: var(--primary-color);
+  border: none;
+  color: #ffffff;
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: var(--hover-color);
+  transform: translateY(-3px);
+}
+
+/* Empêche le changement de couleur au clic */
+.btn-primary:active {
+  background-color: var(--primary-color);
+  transform: scale(0.98); /* Optionnel : effet de "clic" */
+  box-shadow: none;
+}
+
+/* ========================
+        Boutons de date
+     ======================== */
+.next-available-btn,
+.request-btn {
+  margin-left: 20px;
+  background-color: var(--primary-color) !important;
+  color: #ffffff !important;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.next-available-btn:hover,
+.request-btn:hover {
+  background-color: var(--hover-color) !important;
+  transform: translateY(-3px);
+}
+
+.next-available-btn:active,
+.request-btn:active {
+  background-color: var(--primary-color) !important;
+  transform: scale(0.98) !important;
+  box-shadow: none !important;
+}
+
+/* ========================
+      Détails du service
+     ======================== */
+.service-details {
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================
+           Footer
+     ======================== */
+.footer {
+  background-color: var(--dark-gray);
+  color: #e9eef4;
+  font-size: 0.9rem;
+  padding: 2rem 0;
+}
+
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #03a9f4;
+  text-decoration: underline;
+}
+
+.footer-logo {
+  max-width: 150px;
+  filter: brightness(0) invert(1);
+}

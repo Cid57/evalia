@@ -1,0 +1,64 @@
+/* ========================
+   FOOTER
+======================== */
+/* Centre le contenu du footer et ajoute du padding sur mobile */
+@media only screen and (max-width: 768px) {
+  .footer {
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .footer .footer-logo {
+    margin: 0 auto 1rem auto;
+    display: block;
+  }
+
+  .footer h5 {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .footer .list-unstyled,
+  .footer-links {
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .footer .list-unstyled li,
+  .footer-links .list-inline-item {
+    margin-bottom: 1rem;
+  }
+
+  .footer-bottom {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+/* Fin Footer */
+
+/* ========================
+   INFO TEXT =================
+======================== */
+
+.info-text {
+  background-color: #f5f5f5;
+  padding: 2rem;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+}
+
+.info-section {
+  padding-bottom: 0;
+}
+/* Fin Info text */
+
+/* Style pour rendre l'image responsive et bien positionnée */
+@media (max-width: 768px) {
+  .info-section .row {
+    flex-direction: column-reverse;
+  }
+
+  .info-image {
+    height: 300px;
+  }
+}

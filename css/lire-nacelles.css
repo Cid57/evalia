@@ -1,0 +1,223 @@
+/* ========================
+   Style global
+======================== */
+body {
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  background-color: #f5f7fa;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+}
+
+/* ========================
+     Lien de retour
+  ======================== */
+.back-link {
+  color: #6f42c1;
+  font-weight: 500;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: #5b36a0;
+  text-decoration: underline;
+}
+
+/* ========================
+     Titres principaux
+  ======================== */
+h1,
+h2 {
+  color: #333;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* ========================
+     Badges et informations principales
+  ======================== */
+.badge {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.bg-primary {
+  background-color: #6f42c1 !important;
+}
+
+.bg-secondary {
+  background-color: #868e96 !important;
+}
+
+.text-muted {
+  color: #6c757d !important;
+}
+
+/* ========================
+     Bouton principal
+  ======================== */
+.btn-primary {
+  background-color: #6f42c1;
+  color: #ffffff;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(111, 66, 193, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: #5b36a0;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(111, 66, 193, 0.3);
+}
+
+/* ========================
+     Section de description
+  ======================== */
+.bg-light {
+  background-color: #ffffff !important;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.bg-light h2 {
+  font-size: 1.6rem;
+  color: #6f42c1;
+}
+
+.bg-light p,
+.bg-light ul {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+.bg-light ul {
+  padding-left: 1.5rem;
+}
+
+.bg-light ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* ========================
+     Section coordonnées
+  ======================== */
+.bg-dark {
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
+  color: #333;
+}
+
+/* ========================
+     Styles des titres de section
+  ======================== */
+h3 {
+  font-size: 1.4rem;
+  color: #333;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+/* ========================
+     Adresses et coordonnées
+  ======================== */
+.address {
+  font-size: 1rem;
+  color: #444;
+  padding-top: 1rem;
+  line-height: 1.5;
+}
+
+/* ========================
+     Responsive adjustments
+  ======================== */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .btn-primary {
+    width: 100%;
+    padding: 0.6rem 1.5rem;
+  }
+
+  .container {
+    padding: 1.5rem;
+  }
+
+  .bg-light,
+  .bg-dark {
+    padding: 1.5rem;
+  }
+}
+
+/* ========================
+     FOOTER
+  ======================== */
+.footer {
+  background-color: #171c32;
+  color: #e9eef4;
+  font-size: 0.9rem;
+  padding: 2rem 0;
+}
+
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #03a9f4;
+  text-decoration: underline;
+}
+
+.footer-logo {
+  max-width: 150px;
+  margin-bottom: 10px;
+  filter: brightness(0) invert(1);
+}
+
+.footer h5 {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.footer .list-unstyled li {
+  color: #e9eef4;
+  margin-bottom: 0.5rem;
+}
+
+.footer-links .list-inline-item a:hover {
+  color: #03a9f4;
+  text-decoration: underline;
+}

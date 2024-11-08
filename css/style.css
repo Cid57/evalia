@@ -1,10 +1,6 @@
-/* Couleurs mises à jour */
-/*:root {
-  --primary-color: #6f42c1;
-  --text-color: #171c32;
-}
-  */
-
+/* ========================
+   VARIABLES GLOBALES
+======================== */
 :root {
   --primary-color: #6f42c1; /* Violet principal */
   --hover-color: #5b36a0; /* Violet foncé pour survol */
@@ -13,6 +9,22 @@
   --dark-gray: #171c32;
 }
 
+/* ========================
+   STYLE GLOBAL
+======================== */
+body {
+  background-color: var(--light-gray);
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ========================
+   BOUTONS
+======================== */
 .btn-primary {
   background-color: var(--primary-color);
   border: none;
@@ -24,102 +36,144 @@
 }
 
 .btn-primary:hover {
-  background-color: #5b36a0;
+  background-color: var(--hover-color);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-body {
-  background-color: #f8f9fa;
-  box-sizing: border-box;
-}
-
-/*
-.navbar .nav-link {
-  color: #e9eef4;
-  font-weight: 500;
-}
-
-.navbar .nav-link:hover {
-  color: #a166e9;
-  transition: color 0.3s ease;
-}
-
-
+/* Style général pour la barre de navigation */
 .navbar {
-  background-color: transparent;
+  background-color: rgba(23, 28, 50, 0.3);
   transition: background-color 0.3s ease;
 }
 
-
-.navbar.scrolled {
-  background-color: rgba(23, 28, 50, 0.9);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-*/
-
-/* Couleur de fond initialement transparente */
-.navbar {
-  background-color: rgba(23, 28, 50, 0.3); /* Légèrement visible */
-  transition: background-color 0.3s ease;
-}
-
-/* Fond plus opaque lorsque la page est défilée */
+/* Couleur et style de la barre au défilement */
 .navbar.scrolled {
   background-color: rgba(23, 28, 50, 0.9);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Animation pour la barre de survol sous chaque lien */
 .navbar .nav-link {
+  position: relative;
   color: #e9eef4;
   font-weight: 500;
   font-size: 18px;
-}
-
-.navbar .nav-link:hover {
-  color: #a166e9;
+  padding-bottom: 5px;
   transition: color 0.3s ease;
 }
 
-/* Styles de la section d'accueil */
+/* Barre de survol sous chaque lien */
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #a166e9;
+  transition: width 0.3s ease;
+}
+
+/* Barre complète au survol */
+.navbar .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Inversion du logo au scroll pour le rendre plus visible */
+.navbar.scrolled .navbar-brand img {
+  filter: brightness(0) invert(1);
+}
+
+/* ========================
+   SECTION ACCUEIL (Hero Section)
+======================== */
 .hero-section {
   background: url("../images/evalia2.png") center/cover no-repeat;
-  color: var(--background-color);
+  background-attachment: fixed;
   height: 100vh;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
 }
 
-.hero-section h1,
-.hero-section p {
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-}
-
-.container {
-  position: relative;
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.4
+  ); /* Assombrit l'image pour améliorer la lisibilité */
   z-index: 1;
 }
 
-/* Styles de la section du formulaire de devis */
+.hero-section .container {
+  position: relative;
+  z-index: 2; /* Assure que le texte reste au-dessus de l'overlay */
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.hero-section p {
+  font-size: 1.25rem;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hero-section .btn-primary {
+  background-color: #6f42c1;
+  border-color: #6f42c1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-section .btn-primary:hover {
+  background-color: #5b36a0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* ========================
+   FORMULAIRE DE DEVIS
+======================== */
+.devis h2 {
+  margin-bottom: 50px;
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #333;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  font-family: "Georgia", serif;
+  letter-spacing: 1px;
+  padding: 0.3rem 0.5rem;
+
+  display: inline-block;
+}
+
 .quote-form-section {
-  background-color: var(--text-color);
   padding: 3rem 0;
 }
 
 .quote-form-section .form-control {
-  max-width: 100%;
   background-color: var(--background-color);
-  color: var(--text-color);
+  color: black;
   border: 1px solid var(--primary-color);
   padding: 10px;
 }
 
-.quote-form-section .form-control::placeholder {
-  color: #6c757d;
-}
-
 .quote-form-section .form-control:focus {
-  background-color: var(--background-color);
-  color: var(--text-color);
   border-color: var(--primary-color);
   box-shadow: 0 0 5px rgba(3, 169, 244, 0.5);
 }
@@ -128,52 +182,60 @@ body {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
   color: #fff;
+  margin-top: 20px;
 }
 
-.quote-form-section .btn-primary:hover {
-  background-color: #5b36a0; /* Légèrement plus foncé */
-}
-
-/* Styles pour la section des cartes de formation */
+/* ========================
+   SECTION FORMATIONS
+======================== */
 .training-section {
   background-color: var(--background-color);
-  font-family: "Roboto", sans-serif;
   padding: 3rem 0;
+  font-family: "Roboto", sans-serif;
 }
 
-.training-section h2 {
-  font-weight: 700;
-  color: var(--text-color);
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+#nos-formations {
+  margin-top: 50px;
 }
 
-.training-section p.lead {
+#nos-formations h2 {
+  margin-bottom: 50px;
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #333;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  font-family: "Georgia", serif;
+  letter-spacing: 1px;
+  padding: 0.3rem 0.5rem;
+
+  display: inline-block;
+}
+
+.lead {
+  margin-bottom: 30px;
+}
+
+.formation-lead {
+  margin-top: 30px;
+  margin-bottom: 30px;
   font-size: 1.1rem;
-  color: var(--text-color);
-  margin-bottom: 2rem;
 }
-
-/* Styles pour les cartes */
-/*.training-card {
-  border: none;
-  border-radius: 15px;
-  overflow: hidden;
-  background-color: #ffffff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-  */
 
 .training-card {
-  background-color: rgba(255, 255, 255, 0.95); /* léger transparent */
+  background-color: rgba(255, 255, 255, 0.95);
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%; /* Prend toute la hauteur de la carte */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Espace entre les éléments */
+}
+
+.training-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .training-card .card-body {
@@ -183,26 +245,19 @@ body {
   height: 100%;
 }
 
-.training-card .card-text,
-.training-card .card-title,
-.training-card .card-link {
-  margin-bottom: 10px;
-}
-
-.training-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.training-card .card-img-top {
-  height: 300px;
-  object-fit: cover;
-}
-
 .training-card .card-title {
   font-weight: 600;
   color: var(--text-color);
   font-size: 1.2rem;
+}
+
+.training-card .card-link {
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+.training-card .card-link:hover {
+  color: var(--hover-color);
 }
 
 .training-card .card-text {
@@ -211,100 +266,99 @@ body {
   margin-top: 10px;
 }
 
-/* Style des liens */
-.training-card .card-link {
-  color: var(--primary-color);
-  font-weight: 500;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.training-card .card-link:hover {
-  color: #5b36a0;
-}
-
-/* Bouton */
-/*.training-card .btn-primary {
-  align-self: center;
-  margin-top: auto;
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
-  color: var(--background-color);
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-}
-  */
-
 .training-card .btn-primary {
   background-color: var(--primary-color);
   color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .training-card .btn-primary:hover {
-  background-color: #5b36a0;
+  background-color: var(--hover-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/*
-.why-choose-section {
-  margin-top: 50px;
-  background-color: #c9b4f1; 
-  padding: 3rem 0;
-}
-  */
-
-/*
-
-.why-choose-section {
-  background-color: #c9b4f1;
-  padding: 4rem 0;
+/* ========================
+   SECTION TEMOIGNAGE
+======================== *
+/* Section des témoignages avec un fond léger pour un contraste agréable */
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 2rem;
+  color: #171c32;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
 }
 
-.why-choose-section h2 {
-  color: white;
-  font-weight: 700;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+.testimonial-section {
+  margin-bottom: 100px;
 }
 
-.why-choose-section p.lead {
-  color: white;
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto 2rem;
-}
-
-.why-choose-section .btn-primary {
-  background-color: #6f42c1;
-  font-weight: 600;
-}
-
-.why-choose-section .btn-primary:hover {
-  background-color: #572d91;
-}
-
-*/
-
-.why-choose-section {
-  background: linear-gradient(135deg, #9c8ff0, #d1c4f4); /* Dégradé subtil */
-  padding: 4rem 0;
-  color: #ffffff; /* Texte blanc pour contraste */
+.testimonial-section h2 {
+  margin-top: 60px;
+  margin-bottom: 50px;
   text-align: center;
-}
-
-.why-choose-section h2 {
   font-size: 2.8rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Ombre pour le titre */
+  font-weight: 600;
+  color: #333;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  font-family: "Georgia", serif;
+  letter-spacing: 1px;
+  padding: 0.3rem 0.5rem;
 }
 
-.why-choose-section p.lead {
+.testimonial-card img.testimonial-image {
+  width: 80px; /* Taille de l'image */
+  height: 80px;
+  border-radius: 50%; /* Rend l'image ronde */
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================
+   SECTION POURQUOI CHOISIR
+======================== */
+
+.why-choose-section {
+  background: linear-gradient(
+    135deg,
+    #9c8ff0,
+    #d1c4f4
+  ); /* Dégradé violet doux */
+  padding: 4rem 0;
+  color: #ffffff;
+  text-align: center;
+}
+
+.why-choose-section h2 {
+  margin-bottom: 50px;
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #333;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  font-family: "Georgia", serif;
+  letter-spacing: 1px;
+  padding: 0.3rem 0.5rem;
+
+  display: inline-block;
+}
+
+.why-choose-section p {
+  color: black;
   font-size: 1.1rem;
   max-width: 700px;
   margin: 0 auto 2rem;
-  line-height: 1.6;
-  color: #f2f2f2; /* Teinte plus douce */
 }
 
 .why-choose-section .btn-primary {
@@ -321,24 +375,12 @@ body {
 .why-choose-section .btn-primary:hover {
   background-color: #5b36a0;
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-  transform: scale(1.05); /* Zoom léger au survol */
+  transform: scale(1.05);
 }
 
-.separator {
-  height: 4px;
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.5
-  ); /* Ligne de séparation semi-transparente */
-  margin: 2rem auto;
-  width: 80%;
-  border-radius: 2px;
-}
-
-/* debut  */
-
+/* ========================
+   SECTION INFO BOX
+======================== */
 .info-section {
   background-color: #f8f9fa;
 }
@@ -348,7 +390,6 @@ body {
   border-radius: 15px;
   padding: 2rem;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
-  min-height: 200px;
 }
 
 .info-box:hover {
@@ -356,30 +397,108 @@ body {
   transform: translateY(-3px);
 }
 
-.info-icon {
-  font-size: 3rem;
-  color: var(--primary-color);
-}
-.info-box .info-icon {
-  color: #6f42c1;
+.carte {
+  background: linear-gradient(0deg, #ffffff, #e0e5ec);
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1),
+    -10px -10px 20px rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+  padding: 2rem;
 }
 
-.info-title {
-  font-size: 1.5rem; /* Augmente légèrement la taille de la police */
-  font-weight: 700;
+.carte:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ========================
+   SECTION EVALIA EN CHIFFRES
+======================== */
+
+.stats-section h2 {
+  margin-bottom: 50px;
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 600;
   color: #333;
-  margin-top: 1rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  font-family: "Georgia", serif;
+  letter-spacing: 1px;
+  padding: 0.3rem 0.5rem;
+
+  display: inline-block;
 }
 
-.info-box p {
-  font-size: 1rem; /* Ajustez la taille pour une meilleure lisibilité */
-  color: #555;
-  margin-top: 0.5rem;
+.stat-card {
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #d1c4f4 100%
+  ); /* Dégradé blanc vers violet clair */
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem 1rem;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
 }
 
-/*          */
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
 
-/* Bas de page */
+.stat-card h3 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #171c32; /* Couleur du texte */
+  margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+  font-size: 1rem;
+  color: #4a4a4a;
+}
+
+.stat-icon {
+  font-size: 2rem;
+  color: #6f42c1; /* Couleur de l'icône */
+  margin-bottom: 1rem;
+}
+
+/* ========================
+   INFO TEXT =================
+======================== */
+
+.info-section {
+  background-color: #f0f4f8;
+  padding-bottom: 30px;
+}
+
+.info-text {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.info-image {
+  position: relative;
+  background-image: url("../images/home.webp");
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.info-text p {
+  margin-bottom: 1.5rem;
+}
+
+/* ========================
+   FOOTER
+======================== */
 .footer {
   background-color: #171c32;
   color: #e9eef4;
@@ -387,9 +506,20 @@ body {
   padding: 2rem 0;
 }
 
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #03a9f4;
+  text-decoration: underline;
+}
+
 .footer-logo {
   max-width: 150px;
   margin-bottom: 10px;
+  filter: brightness(0) invert(1);
 }
 
 .footer h5 {
@@ -397,41 +527,12 @@ body {
   font-weight: bold;
 }
 
-.footer ul {
-  padding: 0;
-}
-
-.footer .list-unstyled li,
-.footer-links .list-inline-item a {
-  color: #e9eef4;
-  text-decoration: none;
-}
-
-.footer .list-unstyled li i {
-  margin-right: 5px;
-}
-
 .footer .list-unstyled li {
-  margin-bottom: 0.5rem;
-  font-size: 0.9rem;
-}
-
-.footer-bottom {
-  border-top: 1px solid #333;
-}
-
-.footer-links .list-inline-item a {
   color: #e9eef4;
-  margin: 0 5px;
-  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
 }
 
 .footer-links .list-inline-item a:hover {
   color: #03a9f4;
   text-decoration: underline;
-}
-
-.footer-bottom p {
-  color: #999;
-  font-size: 0.85rem;
 }

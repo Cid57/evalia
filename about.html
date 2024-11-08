@@ -13,6 +13,7 @@
 
     <!-- CSS personnalisé pour les styles spécifiques à la page À propos -->
     <link rel="stylesheet" href="./css/about.css" />
+    <link rel="stylesheet" href="./css/mobile.css" />
   </head>
   <body>
     <!-- Navbar -->
@@ -38,18 +39,22 @@
               <a class="nav-link" href="about.html">À propos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#formations">Formations</a>
+              <a class="nav-link" href="index.html#nos-formations"
+                >Formations</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#tarifs">Formules et tarifs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html#contact">Contact</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
+
+    <!-- Fin de la Navbar -->
 
     <!-- Fin de la barre de navigation -->
 
@@ -81,17 +86,13 @@
     <section class="py-5" style="background-color: #171c32; color: #e9eef4">
       <div class="container text-center">
         <p>
-          Chez Evalia, nous sommes fiers de notre expertise en matière de
-          formation en sécurité en hauteur, qui est en grande partie due à notre
-          fondateur, qui compte plus de 25 ans d'expérience dans le domaine des
-          travaux en hauteur. Sa passion pour la sécurité et sa connaissance
-          approfondie de l'industrie ont été les moteurs de notre entreprise.
-          Grâce à lui, nous avons créé une entreprise spécialisée dans la
-          formation en sécurité en hauteur, qui est devenue une référence dans
-          le secteur. Nous sommes fiers de l'héritage que notre fondateur a
-          laissé et nous nous efforçons de poursuivre sa vision en proposant des
-          formations de haute qualité pour assurer la sécurité des travailleurs
-          en hauteur.
+          Sa passion pour la sécurité et sa connaissance approfondie de
+          l'industrie ont été les moteurs de notre entreprise. Grâce à lui, nous
+          avons créé une entreprise spécialisée dans la formation en sécurité en
+          hauteur, qui est devenue une référence dans le secteur. Nous sommes
+          fiers de l'héritage que notre fondateur a laissé et nous nous
+          efforçons de poursuivre sa vision en proposant des formations de haute
+          qualité pour assurer la sécurité des travailleurs en hauteur.
         </p>
       </div>
     </section>
@@ -103,7 +104,7 @@
         <div class="row">
           <!-- Point fort : Qualité -->
           <div class="col-md-6 col-lg-3 mb-4">
-            <div class="feature-card p-4">
+            <div class="carte feature-card p-4">
               <h5 class="feature-title">Qualité</h5>
               <p class="feature-text">
                 Nous sommes fiers de la qualité de notre formation et de notre
@@ -114,7 +115,7 @@
           </div>
           <!-- Point fort : Formateurs qualifiés -->
           <div class="col-md-6 col-lg-3 mb-4">
-            <div class="feature-card p-4">
+            <div class="carte feature-card p-4">
               <h5 class="feature-title">Formateurs qualifiés</h5>
               <p class="feature-text">
                 Nos formateurs sont des professionnels qualifiés et expérimentés
@@ -125,7 +126,7 @@
           </div>
           <!-- Point fort : Formations personnalisées -->
           <div class="col-md-6 col-lg-3 mb-4">
-            <div class="feature-card p-4">
+            <div class="carte feature-card p-4">
               <h5 class="feature-title">Formations personnalisées</h5>
               <p class="feature-text">
                 Nous proposons une formation sur mesure adaptée à vos besoins
@@ -136,7 +137,7 @@
           </div>
           <!-- Point fort : 25 ans d'expérience -->
           <div class="col-md-6 col-lg-3 mb-4">
-            <div class="feature-card p-4">
+            <div class="carte feature-card p-4">
               <h5 class="feature-title">25 ans d'expérience</h5>
               <p class="feature-text">
                 Evalia est spécialisée dans la formation en sécurité en hauteur
@@ -151,7 +152,7 @@
     <!-- Fin de la section des points forts -->
 
     <!-- Section de contact avec formulaire -->
-    <section class="contact-section py-5">
+    <section id="contact" class="contact-section py-5">
       <div class="container">
         <h2 class="text-center mb-4">Contactez-nous</h2>
         <p class="text-center mb-5">
@@ -252,7 +253,16 @@
             <h5>Informations</h5>
             <ul class="list-unstyled">
               <li><i class="bi bi-telephone"></i> +352 26 89 79 35</li>
-              <li><i class="bi bi-envelope"></i> formations@evalia.lu</li>
+              <li>
+                <i class="bi bi-envelope"></i>
+                <a
+                  href="mailto:formations@evalia.lu"
+                  style="color: inherit; text-decoration: none"
+                >
+                  formations@evalia.lu
+                </a>
+              </li>
+
               <li>1a Zone Uw Woeller, L-4410 Soleuvre</li>
             </ul>
           </div>
@@ -266,7 +276,7 @@
         </div>
         <div class="footer-bottom mt-4 pt-4 border-top">
           <ul class="footer-links list-inline text-center">
-            <li class="list-inline-item"><a href="#">Nous contacter</a></li>
+            <a class="list-inline-item" href="about.html#contact">Contact</a>
             <li class="list-inline-item"><a href="#">Mentions légales</a></li>
             <li class="list-inline-item"><a href="#">Privacy policy</a></li>
             <li class="list-inline-item">
@@ -278,15 +288,13 @@
       </div>
     </footer>
 
-    <!-- Script pour changer l'apparence de la navbar lors du défilement -->
     <script>
+      // Ajoute la classe "scrolled" lorsque la page est défilée
       window.addEventListener("scroll", function () {
         const navbar = document.querySelector(".navbar");
         if (window.scrollY > 50) {
-          // Ajoute une classe avec un fond lorsque le défilement dépasse 50 pixels
           navbar.classList.add("scrolled");
         } else {
-          // Supprime la classe si l'utilisateur revient en haut
           navbar.classList.remove("scrolled");
         }
       });
