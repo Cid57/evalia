@@ -5,9 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>À propos - Evalia</title>
 
-    <!-- CSS de Bootstrap pour la mise en forme et la structure -->
+    <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    />
+
+    <!-- Google Fonts (Roboto) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
 
@@ -15,7 +27,11 @@
     <link rel="stylesheet" href="./css/about.css" />
     <link rel="stylesheet" href="./css/mobile.css" />
   </head>
-  <body>
+  <body id="top">
+    <!-- Bouton de remontée en haut de la page -->
+    <a href="#top" class="top-button" title="Retour en haut">
+      <i class="bi bi-arrow-up-circle-fill"></i>
+    </a>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div class="container">
@@ -53,9 +69,6 @@
         </div>
       </div>
     </nav>
-
-    <!-- Fin de la Navbar -->
-
     <!-- Fin de la barre de navigation -->
 
     <!-- En-tête avec une image de fond pleine largeur -->
@@ -63,7 +76,7 @@
       class="about-hero d-flex align-items-center text-center text-white"
     >
       <div class="container">
-        <h1 class="display-4">Nous sommes Evalia</h1>
+        <h1 class="a-propos display-4">Nous sommes Evalia</h1>
         <p>Formations de travaux en hauteur</p>
       </div>
     </section>
@@ -85,6 +98,7 @@
     <!-- Section d'introduction avec texte explicatif -->
     <section class="py-5" style="background-color: #171c32; color: #e9eef4">
       <div class="container text-center">
+        <h2 id="section-title">Notre Histoire et Engagement</h2>
         <p>
           Sa passion pour la sécurité et sa connaissance approfondie de
           l'industrie ont été les moteurs de notre entreprise. Grâce à lui, nous
@@ -225,9 +239,7 @@
               </div>
               <!-- Bouton de soumission -->
               <div class="text-center">
-                <button type="submit" class="btn btn-primary btn-lg">
-                  Soumettre
-                </button>
+                <button type="submit" class="btn btn-primary">Soumettre</button>
               </div>
             </form>
             <!-- Fin du formulaire de contact -->
@@ -240,7 +252,7 @@
     <!-- Bas de page -->
     <footer class="footer">
       <div class="container py-5">
-        <div class="row">
+        <div class="row text-center">
           <div class="col-md-4">
             <img
               src="./images/logo.png"
@@ -298,6 +310,13 @@
           navbar.classList.remove("scrolled");
         }
       });
+
+      document
+        .querySelector(".top-button")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
     </script>
 
     <!-- Script JS de Bootstrap pour les fonctionnalités interactives -->

@@ -27,7 +27,11 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/mobile.css" />
   </head>
-  <body>
+  <body id="Home">
+    <!-- Bouton de remontée en haut de la page -->
+    <a href="#Home" class="top-button" title="Retour en haut">
+      <i class="bi bi-arrow-up-circle-fill"></i>
+    </a>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div class="container">
@@ -56,9 +60,7 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html#tarifs"
-                >Formules et tarifs</a
-              >
+              <a class="nav-link" href="#tarifs">Formules et tarifs</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="about.html#contact">Contact</a>
@@ -67,8 +69,7 @@
         </div>
       </div>
     </nav>
-
-    <!-- Fin de la Navbar -->
+    <!-- Fin de la barre de navigation -->
 
     <!-- Section d'accueil -->
     <section
@@ -80,7 +81,12 @@
           Soyez formé pour intervenir en toute sécurité dans les situations les
           plus périlleuses. Découvrez nos formations aujourd'hui.
         </p>
-        <a href="#nos-formations" class="btn btn-primary mt-3">Découvrir</a>
+        <a
+          href="#nos-formations"
+          id="boutton-animation"
+          class="btn btn-primary mt-3"
+          >Découvrir</a
+        >
       </div>
     </section>
 
@@ -239,6 +245,7 @@
     <!-- Info text -->
     <section class="info-section py-5">
       <div class="container">
+        <h2>Evalia, qui sommes-nous ?</h2>
         <div class="row">
           <!-- Section texte -->
           <div class="col-md-6">
@@ -320,15 +327,15 @@
           <div class="col-md-3">
             <div class="card h-100 shadow-sm training-card">
               <img
-                src="./images/card1.webp"
+                src="./images/card5.webp"
                 class="card-img-top"
                 alt="Formation 1"
               />
               <div class="card-body">
                 <h5 class="card-title">TR-016 Vérification EPI</h5>
-                <a href="#" class="card-link">Lire plus</a>
+                <a href="lire-epi.html" class="card-link">Lire plus</a>
                 <p class="card-text mt-2">8 h<br />390 €</p>
-                <a href="#" class="btn btn-primary w-100 mt-3 text-white"
+                <a href="epi.html" class="btn btn-primary w-100 mt-3 text-white"
                   >Envoyer une demande</a
                 >
               </div>
@@ -339,7 +346,7 @@
           <div class="col-md-3">
             <div class="card h-100 shadow-sm training-card">
               <img
-                src="./images/card3.webp"
+                src="./images/card7.webp"
                 class="card-img-top"
                 alt="Formation 3"
               />
@@ -347,9 +354,13 @@
                 <h5 class="card-title">
                   TR-021 Conduite engins de manutention
                 </h5>
-                <a href="#" class="card-link">Lire plus</a>
+                <a href="lire-conduite-engin.html" class="card-link"
+                  >Lire plus</a
+                >
                 <p class="card-text mt-2">16 h<br />643 €</p>
-                <a href="#" class="btn btn-primary w-100 mt-3 text-white"
+                <a
+                  href="conduite-engin.html"
+                  class="btn btn-primary w-100 mt-3 text-white"
                   >Envoyer une demande</a
                 >
               </div>
@@ -359,7 +370,7 @@
           <div class="col-md-3">
             <div class="card h-100 shadow-sm training-card">
               <img
-                src="./images/card4.webp"
+                src="./images/card8.webp"
                 class="card-img-top"
                 alt="Formation 4"
               />
@@ -367,9 +378,11 @@
                 <h5 class="card-title">
                   TR-022 Habilitation échafaudage roulant
                 </h5>
-                <a href="#" class="card-link">Lire plus</a>
+                <a href="lire-habilitation.html" class="card-link">Lire plus</a>
                 <p class="card-text mt-2">8 h<br />425 €</p>
-                <a href="#" class="btn btn-primary w-100 mt-3 text-white"
+                <a
+                  href="habilitation.html"
+                  class="btn btn-primary w-100 mt-3 text-white"
                   >Envoyer une demande</a
                 >
               </div>
@@ -381,17 +394,17 @@
           <div class="col-md-3">
             <div class="card h-100 shadow-sm training-card">
               <img
-                src="./images/card5.webp"
+                src="./images/card1.webp"
                 class="card-img-top"
                 alt="Formation 5"
               />
               <div class="card-body">
-                <h5 class="card-title">
-                  TR-023 Inspection visuelle des équipements
-                </h5>
-                <a href="#" class="card-link">Lire plus</a>
-                <p class="card-text mt-2">6 h<br />320 €</p>
-                <a href="#" class="btn btn-primary w-100 mt-3 text-white"
+                <h5 class="card-title">TR-010 Port du harnais</h5>
+                <a href="lire-harnais.html" class="card-link">Lire plus</a>
+                <p class="card-text mt-2">8 h<br />320 €</p>
+                <a
+                  href="harnais.html"
+                  class="btn btn-primary w-100 mt-3 text-white"
                   >Envoyer une demande</a
                 >
               </div>
@@ -401,15 +414,17 @@
           <div class="col-md-3">
             <div class="card h-100 shadow-sm training-card">
               <img
-                src="./images/card6.webp"
+                src="./images/card2.webp"
                 class="card-img-top"
                 alt="Formation 6"
               />
               <div class="card-body">
-                <h5 class="card-title">TR-024 Travail en espaces confinés</h5>
-                <a href="#" class="card-link">Lire plus</a>
-                <p class="card-text mt-2">10 h<br />450 €</p>
-                <a href="#" class="btn btn-primary w-100 mt-3 text-white"
+                <h5 class="card-title">TR-011 Travail en hauteur</h5>
+                <a href="lire-hauteur.html" class="card-link">Lire plus</a>
+                <p class="card-text mt-2">8 h<br />425 €</p>
+                <a
+                  href="hauteur.html"
+                  class="btn btn-primary w-100 mt-3 text-white"
                   >Envoyer une demande</a
                 >
               </div>
@@ -419,15 +434,17 @@
           <div class="col-md-3">
             <div class="card h-100 shadow-sm training-card">
               <img
-                src="./images/card7.webp"
+                src="./images/card3.webp"
                 class="card-img-top"
                 alt="Formation 7"
               />
               <div class="card-body">
-                <h5 class="card-title">TR-025 Formation anti-chute</h5>
-                <a href="#" class="card-link">Lire plus</a>
-                <p class="card-text mt-2">12 h<br />500 €</p>
-                <a href="#" class="btn btn-primary w-100 mt-3 text-white"
+                <h5 class="card-title">TR-014 Ligne de vie provisoire</h5>
+                <a href="lire-provisoire.html" class="card-link">Lire plus</a>
+                <p class="card-text mt-2">4 h<br />320 €</p>
+                <a
+                  href="provisoire.html"
+                  class="btn btn-primary w-100 mt-3 text-white"
                   >Envoyer une demande</a
                 >
               </div>
@@ -437,15 +454,17 @@
           <div class="col-md-3">
             <div class="card h-100 shadow-sm training-card">
               <img
-                src="./images/card8.webp"
+                src="./images/card4.webp"
                 class="card-img-top"
                 alt="Formation 8"
               />
               <div class="card-body">
-                <h5 class="card-title">TR-026 Sauvetage en hauteur</h5>
-                <a href="#" class="card-link">Lire plus</a>
-                <p class="card-text mt-2">14 h<br />600 €</p>
-                <a href="#" class="btn btn-primary w-100 mt-3 text-white"
+                <h5 class="card-title">TR-015 Ligne de vie permanente</h5>
+                <a href="lire-permanente.html" class="card-link">Lire plus</a>
+                <p class="card-text mt-2">4 h<br />320 €</p>
+                <a
+                  href="permanente.html"
+                  class="btn btn-primary w-100 mt-3 text-white"
                   >Envoyer une demande</a
                 >
               </div>
@@ -510,7 +529,7 @@
     <!-- Bas de page -->
     <footer class="footer">
       <div class="container py-5">
-        <div class="row">
+        <div class="row text-center">
           <div class="col-md-4">
             <img
               src="./images/logo.png"
@@ -568,6 +587,13 @@
           navbar.classList.remove("scrolled");
         }
       });
+
+      document
+        .querySelector(".top-button")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
     </script>
 
     <!-- Bootstrap JS -->

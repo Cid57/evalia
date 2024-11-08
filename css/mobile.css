@@ -1,8 +1,23 @@
-/* ========================
-   FOOTER
-======================== */
-/* Centre le contenu du footer et ajoute du padding sur mobile */
 @media only screen and (max-width: 768px) {
+  /* Supprime la barre de survol sous chaque lien en version mobile */
+  .navbar .nav-link::after {
+    content: none;
+  }
+
+  .hero-section {
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .about-hero {
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+  }
+
+  /* Footer styles */
   .footer {
     text-align: center;
     padding: 2rem 1rem;
@@ -33,32 +48,40 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
-}
-/* Fin Footer */
 
-/* ========================
-   INFO TEXT =================
-======================== */
+  /* Ajustement des titres */
+  h1 {
+    font-size: 2.5rem !important;
+  }
 
-.info-text {
-  background-color: #f5f5f5;
-  padding: 2rem;
-  border-radius: 5px;
-  margin-bottom: 2rem;
-}
+  h2 {
+    font-size: 2rem !important;
+  }
 
-.info-section {
-  padding-bottom: 0;
-}
-/* Fin Info text */
+  h3 {
+    font-size: 1.8rem !important;
+  }
 
-/* Style pour rendre l'image responsive et bien positionnée */
-@media (max-width: 768px) {
+  /* Info Text Section */
+  .info-text {
+    background-color: #f5f5f5;
+    padding: 2rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+  }
+
+  .info-section {
+    padding-bottom: 0;
+  }
+
   .info-section .row {
+    display: flex; /* Assurez-vous que .row utilise bien flex */
     flex-direction: column-reverse;
   }
 
   .info-image {
     height: 300px;
+    width: auto; /* Conserve les proportions */
+    object-fit: cover; /* Optionnel, selon l'effet souhaité */
   }
 }

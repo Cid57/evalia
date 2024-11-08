@@ -15,6 +15,7 @@
 body {
   background-color: var(--light-gray);
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
 .container {
@@ -85,6 +86,10 @@ body {
   filter: brightness(0) invert(1);
 }
 
+.navbar img {
+  filter: brightness(0) invert(1);
+}
+
 /* ========================
    SECTION ACCUEIL (Hero Section)
 ======================== */
@@ -108,11 +113,11 @@ body {
   right: 0;
   bottom: 0;
   background: rgba(
-    0,
-    0,
-    0,
+    23,
+    28,
+    50,
     0.4
-  ); /* Assombrit l'image pour améliorer la lisibilité */
+  ); /* Utilise #171C32 avec une opacité de 0.4 */
   z-index: 1;
 }
 
@@ -125,6 +130,7 @@ body {
   font-size: 3rem;
   font-weight: 700;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  letter-spacing: 3px;
 }
 
 .hero-section p {
@@ -385,6 +391,18 @@ body {
   background-color: #f8f9fa;
 }
 
+.info-section h2 {
+  margin-bottom: 50px;
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #333;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  font-family: "Georgia", serif;
+  letter-spacing: 1px;
+  padding: 0.3rem 0.5rem;
+}
+
 .info-box {
   border: 1px solid #e0e0e0;
   border-radius: 15px;
@@ -535,4 +553,25 @@ body {
 .footer-links .list-inline-item a:hover {
   color: #03a9f4;
   text-decoration: underline;
+}
+
+/* Style pour le bouton de remontée */
+.top-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #171c32;
+  color: #e9eef4;
+  font-size: 2rem;
+  border-radius: 50%;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.top-button:hover {
+  background-color: #333;
+  transform: translateY(-3px);
 }

@@ -10,6 +10,8 @@
 /* 2. Styles généraux */
 body {
   background-color: var(--light-gray);
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
 .btn-primary {
@@ -31,42 +33,65 @@ body {
 /* ========================
    NAVBAR
 ======================== */
+/* Style général pour la barre de navigation */
 .navbar {
   background-color: rgba(23, 28, 50, 0.3);
   transition: background-color 0.3s ease;
 }
 
+/* Couleur et style de la barre au défilement */
 .navbar.scrolled {
   background-color: rgba(23, 28, 50, 0.9);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Animation pour la barre de survol sous chaque lien */
 .navbar .nav-link {
+  position: relative;
   color: #e9eef4;
   font-weight: 500;
   font-size: 18px;
-}
-
-.navbar .nav-link:hover {
-  color: #a166e9;
+  padding-bottom: 5px;
   transition: color 0.3s ease;
 }
 
-/* Par défaut : logo en couleur */
-.navbar .navbar-brand img {
-  transition: filter 0.3s ease;
+/* Barre de survol sous chaque lien */
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #a166e9;
+  transition: width 0.3s ease;
 }
 
-/* Logo en blanc lorsque la page est défilée */
+/* Barre complète au survol */
+.navbar .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Inversion du logo au scroll pour le rendre plus visible */
 .navbar.scrolled .navbar-brand img {
   filter: brightness(0) invert(1);
 }
+
+.navbar img {
+  filter: brightness(0) invert(1);
+}
+
 /* 4. Section d'en-tête (hero) */
 .about-hero {
-  background: url("../images/about.jpg") top / cover no-repeat;
-  color: #e9eef4;
-  height: 60vh;
+  background: url("../images/about.jpg") center / cover no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
 }
 
 .about-hero::before {
@@ -83,6 +108,11 @@ body {
 .about-hero .container {
   position: relative;
   z-index: 1;
+}
+
+.a-propos {
+  font-weight: 700;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
 /* 5. Section des fonctionnalités (features) */
@@ -135,6 +165,7 @@ body {
   align-items: center;
   text-align: center;
   margin: 0;
+  font-family: "Roboto", sans-serif;
 }
 
 /* Utilisation de flexbox pour aligner le contenu */
@@ -144,6 +175,28 @@ body {
   justify-content: space-between;
   height: 100%;
   padding: 2rem;
+}
+
+.container h2 {
+  margin-bottom: 50px;
+  text-align: center;
+  font-size: 2.8rem;
+  color: #333;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  font-family: "Georgia", serif;
+  letter-spacing: 1px;
+  padding: 0.3rem 0.5rem;
+}
+
+#section-title {
+  margin-bottom: 50px;
+  text-align: center;
+  font-size: 2.8rem;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  font-family: "Georgia", serif;
+  letter-spacing: 1px;
+  padding: 0.3rem 0.5rem;
 }
 
 /* 6. Section de contact */
@@ -242,4 +295,25 @@ body {
 .footer-links .list-inline-item a:hover {
   color: #03a9f4;
   text-decoration: underline;
+}
+
+/* Style pour le bouton de remontée */
+.top-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #171c32;
+  color: #e9eef4;
+  font-size: 2rem;
+  border-radius: 50%;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.top-button:hover {
+  background-color: #333;
+  transform: translateY(-3px);
 }
