@@ -22,6 +22,43 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="./images/logo.png" alt="Logo Evalia" height="50" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">À propos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Formations</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#tarifs">Formules et tarifs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Fin de la barre de navigation -->
+
     <!-- Section de réservation -->
     <section class="booking-section py-5">
       <div class="container">
@@ -43,10 +80,10 @@
         <div class="booking-content d-flex justify-content-between">
           <!-- Sélection de date et d'heure -->
           <div
-            class="date-time-selection bg-white p-4 rounded shadow-sm me-3 flex-grow-1"
+            class="date-time-selection bg-white p-4 rounded shadow-sm flex-grow-1"
           >
-            <h2 class="mb-3">Sélectionnez une date et une heure</h2>
-            <p>Heure normale d'Europe centrale (UTC+1)</p>
+            <h2 class="mb-3 text-center">Sélectionnez une date et une heure</h2>
+            <p class="text-center">Heure normale d'Europe centrale (UTC+1)</p>
             <div class="calendar mb-3"></div>
             <button class="next-available-btn btn btn-primary mt-4">
               Prochaine date disponible
@@ -55,14 +92,16 @@
 
           <!-- Détails du service -->
           <div class="service-details bg-light p-4 rounded shadow-sm">
-            <h3 class="mb-3">Détails du service</h3>
-            <p class="service-name fw-bold">
+            <h3 class="mb-3 text-center">Détails du service</h3>
+            <p class="service-name fw-bold text-center">
               TR-020 PEMP Nacelles multidirectionnelle
             </p>
-            <p class="price text-primary fs-4 fw-bold">643 €</p>
-            <button class="request-btn btn btn-outline-primary">
-              Envoyer une demande
-            </button>
+            <p class="price text-primary fs-4 fw-bold text-center">643 €</p>
+            <a href="about.html#contact">
+              <button class="request-btn btn btn-outline-primary text-center">
+                Envoyer une demande
+              </button></a
+            >
           </div>
         </div>
       </div>
@@ -92,7 +131,7 @@
                   >formations@evalia.lu</a
                 >
               </li>
-              <li>1a Zone Uw Woeller, L-4410 Soleuvre</li>
+              <li>12 Rue Kneppchen, Helperknapp, Luxembourg</li>
             </ul>
           </div>
           <div class="col-md-4">

@@ -1,0 +1,213 @@
+/* ========================
+   VARIABLES GLOBALES
+======================== */
+:root {
+  --primary-color: #6f42c1; /* Violet principal */
+  --hover-color: #5b36a0; /* Violet foncé pour survol */
+  --text-color: #333333;
+  --light-gray: #f8f9fa;
+  --dark-gray: #171c32;
+}
+
+/* ========================
+     STYLE GLOBAL
+  ======================== */
+body {
+  background-color: var(--light-gray);
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+.container h2 {
+  font-family: "Georgia", serif;
+  font-size: 45px;
+  margin-bottom: 20px;
+}
+
+/* Style pour le bouton de remontée */
+.top-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #6a47ba;
+  color: #e9eef4;
+  font-size: 2rem;
+  border-radius: 50%;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.top-button:hover {
+  background-color: #333;
+  transform: translateY(-3px);
+}
+/* ========================
+   BOUTONS
+======================== */
+.btn-primary {
+  position: relative;
+  background-color: #6f42c1;
+  border-color: #6f42c1;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden; /* Assure que l'effet reste dans les limites du bouton */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-30deg);
+  transition: transform 0.5s ease;
+}
+
+.btn-primary:hover::before {
+  transform: translateX(100%) skewX(-30deg);
+}
+
+.btn-primary:hover {
+  background-color: #5b36a0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Style général pour la barre de navigation*/
+
+.navbar {
+  background-color: rgba(23, 28, 50, 0.3);
+  transition: background-color 0.3s ease;
+  height: 70px;
+}
+
+/* Couleur et style de la barre au défilement */
+.navbar.scrolled {
+  background-color: rgba(23, 28, 50, 0.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation pour la barre de survol sous chaque lien */
+.navbar .nav-link {
+  position: relative;
+  color: #e9eef4;
+  font-weight: 500;
+  font-size: 18px;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+/* Barre de survol sous chaque lien */
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #a166e9;
+  transition: width 0.3s ease;
+}
+
+/* Barre complète au survol */
+.navbar .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Inversion du logo au scroll pour le rendre plus visible */
+.navbar.scrolled .navbar-brand img {
+  filter: brightness(0) invert(1);
+}
+
+.navbar img {
+  filter: brightness(0) invert(1);
+}
+
+.hero-section {
+  background: url("../images/formation2.jpg") center/cover no-repeat;
+  background-attachment: fixed;
+  height: 70vh;
+  width: 100vw;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(
+    23,
+    28,
+    50,
+    0.4
+  ); /* Utilise #171C32 avec une opacité de 0.4 */
+  z-index: 1;
+}
+
+.formations {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  font-size: calc(1.475rem + 2.7vw);
+  font-weight: 300;
+  line-height: 1.2;
+  font-family: "Georgia", serif;
+}
+
+/* ========================
+   FOOTER
+======================== */
+.footer {
+  background-color: #171c32;
+  color: #e9eef4;
+  font-size: 0.9rem;
+  padding: 2rem 0;
+}
+
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #03a9f4;
+  text-decoration: underline;
+}
+
+.footer-logo {
+  max-width: 150px;
+  margin-bottom: 10px;
+  filter: brightness(0) invert(1);
+}
+
+.footer h5 {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.footer .list-unstyled li {
+  color: #e9eef4;
+  margin-bottom: 0.5rem;
+}
+
+.footer-links .list-inline-item a:hover {
+  color: #03a9f4;
+  text-decoration: underline;
+}

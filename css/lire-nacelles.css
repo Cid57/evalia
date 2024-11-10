@@ -1,6 +1,4 @@
-/* ========================
-   Style global
-======================== */
+/* Style global */
 body {
   font-family: "Roboto", sans-serif;
   color: #333;
@@ -10,17 +8,143 @@ body {
   padding: 0;
 }
 
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 2rem;
+/* Style pour le bouton de remontée */
+.top-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #6a47ba;
+  color: #e9eef4;
+  font-size: 2rem;
+  border-radius: 50%;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* ========================
-     Lien de retour
-  ======================== */
-.back-link {
-  color: #6f42c1;
+.top-button:hover {
+  background-color: #333;
+  transform: translateY(-3px);
+}
+
+/* Style général pour la barre de navigation */
+.navbar {
+  background-color: rgba(23, 28, 50, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+/* Couleur et style de la barre au défilement */
+.navbar.scrolled {
+  background-color: rgba(23, 28, 50, 0.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation pour la barre de survol sous chaque lien */
+.navbar .nav-link {
+  position: relative;
+  color: #e9eef4;
+  font-weight: 500;
+  font-size: 18px;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+/* Barre de survol sous chaque lien */
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #a166e9;
+  transition: width 0.3s ease;
+}
+
+/* Barre complète au survol */
+.navbar .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Conteneur général */
+.container {
+  max-width: 1200px !important;
+  margin: auto !important;
+  /* padding: 2rem !important;*/
+}
+
+.container h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  font-family: "Georgia", serif;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+}
+
+/* Conteneur supérieur avec design moderne */
+.top-container {
+  position: relative;
+  background-image: url(../images/card6.webp);
+  background-size: cover;
+  background-position: top center;
+  border-bottom-left-radius: 45px;
+  border-bottom-right-radius: 45px;
+  color: #ffffff;
+  padding: 3rem 0;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.top-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Ajustez l'opacité pour plus ou moins d'assombrissement */
+  border-bottom-left-radius: 45px;
+  border-bottom-right-radius: 45px;
+  z-index: 1;
+}
+
+.top-container .container {
+  position: relative;
+  z-index: 2; /* Met le contenu au-dessus de l'overlay */
+}
+
+.top-container .container {
+  max-width: 750px;
+}
+
+/* Titre */
+.top-container h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.5px;
+}
+
+/* Sous-titre */
+.top-container p.lead {
+  font-size: 1rem;
+  color: #b0b3c5;
+  margin-bottom: 0.8rem;
+}
+
+/* Lien de retour */
+.top-container .back-link {
+  color: #a0a3bd;
+  font-size: 1.3rem;
   font-weight: 500;
   text-decoration: none;
   margin-bottom: 1rem;
@@ -28,162 +152,265 @@ body {
   transition: color 0.3s ease;
 }
 
-.back-link:hover {
-  color: #5b36a0;
-  text-decoration: underline;
+.back-link {
+  text-decoration: none;
+  font-size: 19px;
 }
 
-/* ========================
-     Titres principaux
-  ======================== */
+.back-link:hover {
+  color: #9b5ffc !important;
+}
+
+/* Styles pour les badges */
+.top-container .badge {
+  font-size: 0.85rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 12px;
+}
+
+/* Bouton principal 
+.top-container .btn-primary {
+  background-color: #8a4af3;
+  color: #ffffff;
+  font-size: 0.9rem;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  box-shadow: 0px 3px 8px rgba(138, 74, 243, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  border: 0;
+}
+
+.top-container .btn-primary:hover {
+  background-color: #6c3ab8;
+  box-shadow: 0px 4px 12px rgba(138, 74, 243, 0.6);
+}
+  */
+
+/* Bouton principal amélioré */
+.top-container .btn-primary {
+  background: linear-gradient(135deg, #8a4af3, #6c3ab8); /* Gradient */
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Ombre plus subtile */
+  transition: all 0.3s ease;
+  border: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.top-container .btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-30deg);
+  transition: transform 0.5s ease;
+}
+
+.top-container .btn-primary:hover::before {
+  transform: translateX(80%) skewX(-30deg); /* Déplacement au hover */
+}
+
+.top-container .btn-primary:hover {
+  background: linear-gradient(
+    135deg,
+    #9b5ffc,
+    #5a2e91
+  ); /* Couleurs légèrement modifiées */
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Titres principaux */
 h1,
 h2 {
   color: #333;
   font-weight: 700;
 }
 
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
 h2 {
-  font-size: 1.8rem;
-  margin-top: 2rem;
+  font-size: 1.6rem;
+  margin-top: 1.5rem;
   margin-bottom: 1rem;
 }
 
-/* ========================
-     Badges et informations principales
-  ======================== */
-.badge {
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  color: #fff;
+/* Navigation par onglets */
+.nav-tabs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-right: 1px solid #ddd;
+  border-radius: 25px;
+  padding-right: 1.5rem;
+  width: 200px; /* Augmente la largeur du bloc */
+  font-size: 1.1rem; /* Augmente la taille du texte */
 }
 
-.bg-primary {
-  background-color: #6f42c1 !important;
-}
-
-.bg-secondary {
-  background-color: #868e96 !important;
-}
-
-.text-muted {
-  color: #6c757d !important;
-}
-
-/* ========================
-     Bouton principal
-  ======================== */
-.btn-primary {
-  background-color: #6f42c1;
-  color: #ffffff;
-  padding: 0.8rem 2rem;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 12px rgba(111, 66, 193, 0.2);
-}
-
-.btn-primary:hover {
-  background-color: #5b36a0;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(111, 66, 193, 0.3);
-}
-
-/* ========================
-     Section de description
-  ======================== */
-.bg-light {
-  background-color: #ffffff !important;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-.bg-light h2 {
-  font-size: 1.6rem;
+/* Style des liens dans .nav-tabs */
+.nav-tabs .nav-link {
   color: #6f42c1;
+  font-weight: 500;
+  border: none;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  width: 100%;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 8px;
+  margin: 5px;
 }
 
-.bg-light p,
-.bg-light ul {
+.nav-tabs .nav-link:hover {
+  background-color: #f3f4f6; /* Arrière-plan clair au survol */
+}
+
+.nav-tabs .nav-link.active {
+  background-color: #6f42c1 !important;
+  color: #fff !important;
+}
+
+/* Contenu des onglets */
+.tab-content {
   font-size: 1rem;
   color: #555;
-  line-height: 1.7;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+  line-height: 1.8;
+  text-align: justify;
 }
 
-.bg-light ul {
+/* Amélioration du style pour les paragraphes à l'intérieur du contenu */
+.tab-content p {
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+/* Style pour les titres de section à l'intérieur des onglets, s'il y en a */
+.tab-content h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Ombre légère pour rendre la carte plus élégante */
+.tab-content {
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.tab-content h4 {
+  font-weight: 600;
+  color: #333;
+  margin-top: 1rem;
+}
+
+.tab-content ul {
   padding-left: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-.bg-light ul li {
+.tab-content ul li {
   margin-bottom: 0.5rem;
 }
 
-/* ========================
-     Section coordonnées
-  ======================== */
-.bg-dark {
-  background-color: #f9f9f9;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  font-size: 1rem;
-  color: #333;
-}
-
-/* ========================
-     Styles des titres de section
-  ======================== */
-h3 {
-  font-size: 1.4rem;
-  color: #333;
-  font-weight: 600;
-  margin-top: 1.5rem;
-  margin-bottom: 0.8rem;
-}
-
-/* ========================
-     Adresses et coordonnées
-  ======================== */
+/* Section coordonnées */
 .address {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #444;
   padding-top: 1rem;
   line-height: 1.5;
 }
 
-/* ========================
-     Responsive adjustments
-  ======================== */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2rem;
-  }
+/* Style pour le bloc de réservation */
+.reservation-section {
+  background-color: #f9f9f9;
+  padding: 3rem 0;
+}
 
-  .btn-primary {
-    width: 100%;
-    padding: 0.6rem 1.5rem;
-  }
+.reservation-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  font-family: "Georgia", serif;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+}
 
-  .container {
-    padding: 1.5rem;
-  }
+.reservation-section p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
 
-  .bg-light,
-  .bg-dark {
-    padding: 1.5rem;
-  }
+.contact-link {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #6f42c1;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 2px solid #6f42c1;
+  padding: 0.6rem 1.2rem;
+  margin-bottom: 30px;
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.contact-link .contact-icon {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.contact-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 300%;
+  height: 100%;
+  background: rgba(
+    255,
+    255,
+    255,
+    0.3
+  ); /* Augmentez l'opacité pour un effet plus visible */
+  transform: skewX(-30deg);
+  transition: transform 0.5s ease;
+}
+
+.contact-link:hover::before {
+  transform: translateX(100%) skewX(-30deg);
+}
+
+.contact-link:hover {
+  color: #b486f3;
+  border-color: #b486f3;
+}
+
+.contact-link:hover .contact-icon {
+  transform: translateX(
+    8px
+  ); /* Augmente le déplacement de l'icône pour un effet plus dynamique */
 }
 
 /* ========================
-     FOOTER
-  ======================== */
+   FOOTER
+======================== */
 .footer {
   background-color: #171c32;
   color: #e9eef4;
@@ -220,4 +447,77 @@ h3 {
 .footer-links .list-inline-item a:hover {
   color: #03a9f4;
   text-decoration: underline;
+}
+
+.col-md-3 {
+  margin-top: 1.3rem;
+}
+
+/* Responsive adjustments */
+
+@media (max-width: 768px) {
+  /* Réorganisation pour affichage mobile */
+
+  /* Le conteneur principal occupe toute la largeur */
+  .content-section .container {
+    padding: 1rem;
+  }
+
+  /* Ajustement de l'affichage de la navigation par onglets */
+  .nav-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: auto;
+  }
+
+  .nav-tabs .nav-item {
+    width: 100%;
+  }
+
+  .nav-tabs .nav-link {
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem 1rem;
+  }
+
+  /* Alignement du titre */
+  .content-section h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 2.2rem;
+  }
+
+  /* Contenu des onglets ajusté pour une meilleure lisibilité */
+  .tab-content {
+    font-size: 1rem;
+    padding: 1rem;
+    line-height: 1.5;
+  }
+
+  /* Espacement pour éviter le débordement */
+  .top-container {
+    padding: 2rem 1rem;
+  }
+
+  /* Bouton en bas dans son propre conteneur */
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem 0;
+  }
+
+  .reservation-section {
+    padding: 0;
+  }
+
+  .container {
+    margin-bottom: 20px;
+  }
+
+  .col-md-3 {
+    margin-top: 2rem;
+  }
 }

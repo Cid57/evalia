@@ -8,6 +8,26 @@
   --light-gray: #f8f9fa;
   --dark-gray: #171c32;
 }
+/* Style pour le bouton de remontée */
+.top-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #6a47ba;
+  color: #e9eef4;
+  font-size: 2rem;
+  border-radius: 50%;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.top-button:hover {
+  background-color: #333;
+  transform: translateY(-3px);
+}
 
 /* ========================
    STYLE GLOBAL
@@ -42,10 +62,10 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Style général pour la barre de navigation */
 .navbar {
   background-color: rgba(23, 28, 50, 0.3);
   transition: background-color 0.3s ease;
+  height: 70px;
 }
 
 /* Couleur et style de la barre au défilement */
@@ -139,10 +159,29 @@ body {
 }
 
 .hero-section .btn-primary {
+  position: relative;
   background-color: #6f42c1;
   border-color: #6f42c1;
+  color: #fff;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden; /* Assure que l'effet reste dans les limites du bouton */
   transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-section .btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-30deg);
+  transition: transform 0.5s ease;
+}
+
+.hero-section .btn-primary:hover::before {
+  transform: translateX(100%) skewX(-30deg);
 }
 
 .hero-section .btn-primary:hover {
@@ -155,7 +194,7 @@ body {
    FORMULAIRE DE DEVIS
 ======================== */
 .devis h2 {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   text-align: center;
   font-size: 2.8rem;
   font-weight: 600;
@@ -185,10 +224,35 @@ body {
 }
 
 .quote-form-section .btn-primary {
+  position: relative;
   background-color: var(--primary-color);
   border-color: var(--primary-color);
   color: #fff;
   margin-top: 20px;
+  overflow: hidden; /* Empêche l'effet de dépasser du bouton */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.quote-form-section .btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-30deg);
+  transition: transform 0.5s ease;
+}
+
+.quote-form-section .btn-primary:hover::before {
+  transform: translateX(100%) skewX(-30deg);
+}
+
+.quote-form-section .btn-primary:hover {
+  background-color: #5b36a0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
 
 /* ========================
@@ -200,12 +264,7 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-#nos-formations {
-  margin-top: 50px;
-}
-
 #nos-formations h2 {
-  margin-bottom: 50px;
   text-align: center;
   font-size: 2.8rem;
   font-weight: 600;
@@ -214,8 +273,6 @@ body {
   font-family: "Georgia", serif;
   letter-spacing: 1px;
   padding: 0.3rem 0.5rem;
-
-  display: inline-block;
 }
 
 .lead {
@@ -224,7 +281,7 @@ body {
 
 .formation-lead {
   margin-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   font-size: 1.1rem;
 }
 
@@ -279,12 +336,30 @@ body {
   border-radius: 8px;
   padding: 0.75rem 1.5rem;
   font-weight: 600;
+  position: relative;
+  overflow: hidden;
   transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.training-card .btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-30deg);
+  transition: transform 0.8s ease; /* Augmentation de la durée pour un effet plus lent */
+}
+
+.training-card .btn-primary:hover::before {
+  transform: translateX(150%);
 }
 
 .training-card .btn-primary:hover {
   background-color: var(--hover-color);
-  transform: translateY(-2px);
+  transform: inherit !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -342,12 +417,11 @@ body {
     #d1c4f4
   ); /* Dégradé violet doux */
   padding: 4rem 0;
-  color: #ffffff;
   text-align: center;
 }
 
 .why-choose-section h2 {
-  margin-bottom: 50px;
+  margin-bottom: 15px;
   text-align: center;
   font-size: 2.8rem;
   font-weight: 600;
@@ -368,14 +442,33 @@ body {
 }
 
 .why-choose-section .btn-primary {
-  background-color: #6f42c1;
+  position: relative;
+  background-color: #6737c1;
   border: none;
   padding: 0.75rem 2rem;
   font-weight: 600;
   font-size: 1rem;
+  color: #fff;
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  overflow: hidden; /* Empêche l'effet de dépasser du bouton */
   transition: all 0.3s ease;
+}
+
+.why-choose-section .btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-30deg);
+  transition: transform 0.5s ease;
+}
+
+.why-choose-section .btn-primary:hover::before {
+  transform: translateX(100%) skewX(-30deg);
 }
 
 .why-choose-section .btn-primary:hover {
@@ -514,6 +607,77 @@ body {
   margin-bottom: 1.5rem;
 }
 
+/* Style pour le bouton Découvrir */
+.btn-discover {
+  background: linear-gradient(90deg, #a166e9, #6f42c1);
+  color: #fff;
+  padding: 0.75rem 2.5rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  text-align: center;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+}
+
+/* Effet au survol sans déplacement */
+.btn-discover:hover {
+  background: transparent;
+  color: #fff; /* Texte blanc au hover */
+  border: 2px solid #fff;
+}
+
+/* Style pour le bouton Découvrir nos autres Formations */
+.btn-discover-secondary {
+  position: relative;
+  background: linear-gradient(90deg, #a166e9, #6f42c1);
+  color: #fff;
+  padding: 0.75rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 2px solid transparent;
+  border-radius: 30px;
+  transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+  text-align: center;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  text-decoration: none !important;
+}
+
+/* Ajout d'un effet de lumière traversant */
+.btn-discover-secondary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 300%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.8s ease;
+  transform: skewX(-20deg);
+}
+
+/* Effet au survol sans déplacement pour le texte et le bord */
+.btn-discover-secondary:hover {
+  background: linear-gradient(90deg, #6f42c1, #a166e9);
+  color: #fff;
+  border: 2px solid #6f42c1;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Animation d'éclairage au survol */
+.btn-discover-secondary:hover::before {
+  left: 100%;
+}
+
+/* Assure que le texte est au-dessus de l'animation */
+.btn-discover-secondary span {
+  position: relative;
+  z-index: 1;
+}
+
 /* ========================
    FOOTER
 ======================== */
@@ -553,25 +717,4 @@ body {
 .footer-links .list-inline-item a:hover {
   color: #03a9f4;
   text-decoration: underline;
-}
-
-/* Style pour le bouton de remontée */
-.top-button {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background-color: #171c32;
-  color: #e9eef4;
-  font-size: 2rem;
-  border-radius: 50%;
-  padding: 10px;
-  text-align: center;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.top-button:hover {
-  background-color: #333;
-  transform: translateY(-3px);
 }
