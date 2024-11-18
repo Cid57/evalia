@@ -29,6 +29,11 @@
   transform: translateY(-3px);
 }
 
+#boutton-animation {
+  color: white;
+  text-decoration: none;
+}
+
 /* ========================
    STYLE GLOBAL
 ======================== */
@@ -114,7 +119,7 @@ body {
    SECTION ACCUEIL (Hero Section)
 ======================== */
 .hero-section {
-  background: url("../images/evalia2.png") center/cover no-repeat;
+  background: url("../img/evalia2.png") center/cover no-repeat;
   background-attachment: fixed;
   height: 100vh;
   position: relative;
@@ -332,6 +337,7 @@ body {
 .training-card .btn-primary {
   background-color: var(--primary-color);
   color: #ffffff;
+
   border: none;
   border-radius: 8px;
   padding: 0.75rem 1.5rem;
@@ -350,7 +356,7 @@ body {
   height: 100%;
   background: rgba(255, 255, 255, 0.2);
   transform: skewX(-30deg);
-  transition: transform 0.8s ease; /* Augmentation de la durée pour un effet plus lent */
+  transition: transform 0.8s ease;
 }
 
 .training-card .btn-primary:hover::before {
@@ -361,6 +367,7 @@ body {
   background-color: var(--hover-color);
   transform: inherit !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
 }
 
 /* ========================
@@ -594,7 +601,7 @@ body {
 
 .info-image {
   position: relative;
-  background-image: url("../images/home.webp");
+  background-image: url("../img/home.webp");
   background-size: cover;
   background-position: center;
   height: 100%;
@@ -717,4 +724,351 @@ body {
 .footer-links .list-inline-item a:hover {
   color: #03a9f4;
   text-decoration: underline;
+}
+.footer-fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #001335; /* ou la couleur que tu souhaites */
+  z-index: 100;
+}
+
+.espace-supplementaire {
+  margin-top: 100px !important;
+}
+
+main .card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  background-color: #ffffff;
+}
+
+main h2 {
+  font-weight: 700;
+  color: #333;
+}
+
+.form-label {
+  font-weight: 500;
+  color: #555;
+}
+
+.form-control {
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: #6f42c1;
+  box-shadow: 0 0 8px rgba(111, 66, 193, 0.2);
+}
+
+.btn-primary {
+  background-color: #6f42c1;
+  border-color: #6f42c1;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #5936a5;
+  transform: translateY(-2px);
+}
+
+.alert-danger {
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.text-center a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   Page d'inscription
+========================= */
+
+/* Arrière-plan en dégradé pour toute la page */
+/* Arrière-plan en dégradé clair */
+.fullscreen-background {
+  background: linear-gradient(135deg, #e9f1ff, #f2e5ff);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Container pour le formulaire et l'info-section */
+.card-inscription-container {
+  display: flex;
+  background-color: #fff;
+  max-width: 1100px; /* Augmenté pour élargir la carte */
+  width: 90%; /* Assure que la carte soit bien responsive */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  align-items: center;
+  margin: 8rem auto; /* Centrer la carte horizontalement */
+}
+
+/* Ajustement pour la section d'information */
+.info-section {
+  background: linear-gradient(135deg, #6f42c1, #5b3aa7);
+  padding: 3rem;
+  color: #ffffff;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.info-section h2 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  font-family: "Georgia", serif;
+  color: white;
+}
+
+.info-section p {
+  font-size: 1rem;
+  margin-bottom: 4.5rem;
+  line-height: 1.4;
+}
+
+/* Ajustement pour le formulaire d'inscription */
+.formulaire-inscription {
+  padding: 3rem;
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.login-title2 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Georgia", serif;
+}
+
+.form-label {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.form-control {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  border-radius: 5px;
+}
+
+/* Bouton d'inscription avec effet de survol */
+.btn-inscription {
+  background-color: #6f42c1;
+  border-color: #6f42c1;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-inscription::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -110%;
+  width: 220%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-30deg);
+  transition: transform 1s ease, left 1s ease;
+}
+
+.btn-inscription:hover::before {
+  left: 110%;
+}
+
+.btn-inscription:hover {
+  background-color: #59309a;
+  color: #ffffff;
+}
+
+/* =========================
+   Page de connexion
+======================== */
+
+/* Arrière-plan dégradé */
+.fullscreen-background-2 {
+  background: linear-gradient(
+    135deg,
+    #e0e6f6,
+    #f0ebff
+  ); /* Couleur de fond en dégradé */
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.login-container {
+  max-width: 600px; /* Augmentation de la largeur */
+  padding: 3rem; /* Plus de padding pour un espacement accru */
+  margin: 80px auto; /* Ajustement de la marge pour un meilleur centrage */
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  font-size: 1rem; /* Légère augmentation de la taille de la police */
+}
+
+h2.login-title {
+  font-size: 2rem; /* Agrandir le titre pour le rendre plus imposant */
+  font-weight: bold;
+  text-align: center;
+  font-family: "Georgia", serif;
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  font-size: 1rem;
+  color: #555;
+}
+
+.form-control {
+  padding: 0.75rem 1rem; /* Plus d’espace pour le champ de formulaire */
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+/* Bouton avec effet au hover */
+.btn-connexion {
+  background-color: #6f42c1;
+  border: none;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.btn-connexion::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-30deg);
+  transition: transform 1.5s ease; /* Ralentissement de l’effet */
+}
+
+.btn-connexion:hover::before {
+  transform: translateX(100%) skewX(-30deg);
+}
+
+.btn-connexion:hover {
+  background-color: #59309a;
+  color: white;
+}
+
+.text-center a {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    max-width: 90%; /* Plus flexible pour mobile */
+    padding: 2rem;
+    margin: 50px auto;
+  }
+}
+
+/* =========================
+   Page de déconnexion
+======================== */
+
+/* Styles pour la card de déconnexion */
+
+.deconnexion-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Prend toute la hauteur de la vue */
+  padding: 2rem; /* Pour donner de l'espace si l'écran est plus petit */
+  background: linear-gradient(135deg, #e0e6f6, #f0ebff); /* Dégradé de fond */
+}
+
+/* Styles pour la card de déconnexion */
+.deconnexion-container {
+  max-width: 700px; /* Largeur augmentée */
+  padding: 3rem 4rem; /* Plus de padding pour plus d'espace à l'intérieur */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.95
+  ); /* Fond avec légère transparence */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre pour donner de la profondeur */
+  text-align: center;
+}
+
+.deconnexion-container h1 {
+  font-size: 2rem;
+  color: #6f42c1; /* Couleur principale */
+  margin-bottom: 1rem;
+}
+
+.deconnexion-container p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.deconnexion-container .btn-connexion {
+  background-color: #6f42c1;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.deconnexion-container .btn-connexion:hover {
+  background-color: #59309a;
+}
+
+.deconnexion-container {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
