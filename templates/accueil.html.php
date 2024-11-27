@@ -5,7 +5,7 @@
     <p class="lead">
       Soyez formé pour intervenir en toute sécurité dans les situations les plus périlleuses. Découvrez nos formations aujourd'hui.
     </p>
-    <a href="index.php?page=formations" id="boutton-animation" class="btn-discover mt-3">Découvrir</a>
+    <a href="index.php?page=formations" id="boutton-animation" class="btn-decouvrir">Découvrir</a>
   </div>
 </section>
 
@@ -64,60 +64,77 @@
 </section>
 <!-- Fin -->
 
+
+
+
+
+
 <!-- Section des cards-->
 <section class="features-section py-5">
-  <div class="container">
-    <div class="row g-4">
+  <div class="custom-container container">
+    <div class="row gx-5 gy-5"> <!-- Augmentation de l'espacement horizontal (gx-5) et vertical (gy-5) -->
       <!-- Card 1 : Expertise -->
       <div class="col-12 col-md-6 col-lg-4 d-flex align-items-stretch">
-        <div class="carte card h-100 p-4 border-0 text-center">
-          <i
-            class="bi bi-graph-up-arrow feature-icon mb-3"
-            style="font-size: 2rem; color: #03a9f4"></i>
+        <div class="custom-card carte card p-4 border-0 text-center">
+          <i class="bi bi-graph-up-arrow feature-icon mb-3" style="font-size: 2rem; color: #03a9f4"></i>
           <h5 class="feature-title">Expertise</h5>
           <p class="feature-text">
-            Avec une longue expérience dans la formation en sécurité en
-            hauteur, nous avons acquis une expertise unique qui nous permet
-            d'accompagner nos clients dans les environnements les plus
-            exigeants.
+            Avec une longue expérience dans la formation en sécurité en hauteur, nous avons acquis une expertise unique qui nous permet d'accompagner nos clients dans les environnements les plus exigeants.
           </p>
         </div>
       </div>
 
       <!-- Card 2 : Formation sur mesure -->
       <div class="col-12 col-md-6 col-lg-4 d-flex align-items-stretch">
-        <div class="carte card h-100 p-4 border-0 text-center">
-          <i
-            class="bi bi-person-bounding-box feature-icon mb-3"
-            style="font-size: 2rem; color: #03a9f4"></i>
+        <div class="custom-card carte card p-4 border-0 text-center">
+          <i class="bi bi-person-bounding-box feature-icon mb-3" style="font-size: 2rem; color: #03a9f4"></i>
           <h5 class="feature-title">Formation sur mesure</h5>
           <p class="feature-text">
-            Nos formations sont conçues pour s'adapter aux besoins
-            spécifiques de chaque entreprise. Nous collaborons étroitement
-            avec vous pour élaborer des programmes qui répondent précisément
-            à vos attentes en matière de sécurité en hauteur.
+            Nos formations sont conçues pour s'adapter aux besoins spécifiques de chaque entreprise. Nous collaborons étroitement avec vous pour élaborer des programmes qui répondent précisément à vos attentes en matière de sécurité en hauteur.
           </p>
         </div>
       </div>
 
       <!-- Card 3 : Conformité aux normes de sécurité -->
       <div class="col-12 col-md-6 col-lg-4 d-flex align-items-stretch">
-        <div class="carte card h-100 p-4 border-0 text-center">
-          <i
-            class="bi bi-shield-check feature-icon mb-3"
-            style="font-size: 2rem; color: #03a9f4"></i>
+        <div class="custom-card carte card p-4 border-0 text-center">
+          <i class="bi bi-shield-check feature-icon mb-3" style="font-size: 2rem; color: #03a9f4"></i>
           <h5 class="feature-title">Conformité aux normes de sécurité</h5>
           <p class="feature-text">
-            Tous nos programmes de formation suivent les normes de sécurité
-            les plus rigoureuses. Nous mettons un point d'honneur à
-            respecter les règles et standards en vigueur pour garantir une
-            formation en toute conformité.
+            Tous nos programmes de formation suivent les normes de sécurité les plus rigoureuses. Nous mettons un point d'honneur à respecter les règles et standards en vigueur pour garantir une formation en toute conformité.
           </p>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+
+<style>
+  .custom-container {
+    max-width: 1200px;
+    margin: 100px auto;
+  }
+
+  .custom-card {
+
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+
+  }
+
+  .custom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px 10px rgba(241, 169, 247, 0.8), 0 0 40px 20px rgba(116, 226, 255, 0.7);
+  }
+</style>
+
+
+
+
 
 
 <!-- Section Evalia en chiffres -->

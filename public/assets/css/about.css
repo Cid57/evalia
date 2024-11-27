@@ -141,7 +141,7 @@ body {
   font-family: "Georgia", serif;
 }
 
-/* 5. Section des fonctionnalités (features) */
+/* 5. Section des fonctionnalités (features) 
 .features-section {
   background-color: var(--light-gray);
   padding: 4rem 0;
@@ -167,7 +167,6 @@ body {
     -15px -15px 30px rgba(255, 255, 255, 0.9);
 }
 
-/* Titre uniforme pour les cartes */
 .feature-title {
   color: var(--dark-gray);
   font-weight: 700;
@@ -181,7 +180,7 @@ body {
   text-align: center;
 }
 
-/* Texte avec centrage vertical */
+
 .feature-text {
   color: #4a4a4a;
   font-size: 0.95rem;
@@ -193,6 +192,8 @@ body {
   margin: 0;
   font-family: "Roboto", sans-serif;
 }
+
+*/
 
 /* Utilisation de flexbox pour aligner le contenu */
 .features-section .carte {

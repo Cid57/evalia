@@ -29,11 +29,26 @@
   transform: translateY(-3px);
 }
 
+/* Style pour le bouton Découvrir */
+
+.btn-decouvrir {
+  background-color: #59309a;
+  padding: 18px;
+  border-radius: 10px;
+  font-size: 18px !important;
+}
+
+.btn-decouvrir:hover {
+  background-color: white;
+  color: black !important;
+  transform: translateY(-3px);
+  border: 2px solid black;
+}
+
 #boutton-animation {
   color: white;
   text-decoration: none;
 }
-
 /* ========================
    STYLE GLOBAL
 ======================== */
@@ -152,10 +167,11 @@ body {
 }
 
 .hero-section h1 {
-  font-size: 3rem;
+  font-size: 3.8rem;
   font-weight: 700;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+
   letter-spacing: 3px;
+  color: white;
 }
 
 .hero-section p {
@@ -201,7 +217,7 @@ body {
 .devis h2 {
   margin-bottom: 30px;
   text-align: center;
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 600;
   color: #333;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
@@ -271,7 +287,7 @@ body {
 
 #nos-formations h2 {
   text-align: center;
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 600;
   color: #333;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
@@ -281,7 +297,7 @@ body {
 }
 
 .lead {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 .formation-lead {
@@ -391,7 +407,7 @@ body {
   margin-top: 60px;
   margin-bottom: 50px;
   text-align: center;
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 600;
   color: #333;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
@@ -494,7 +510,7 @@ body {
 .info-section h2 {
   margin-bottom: 50px;
   text-align: center;
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 600;
   color: #333;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
@@ -536,7 +552,7 @@ body {
 .stats-section h2 {
   margin-bottom: 50px;
   text-align: center;
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 600;
   color: #333;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
@@ -600,40 +616,19 @@ body {
 }
 
 .info-image {
+  margin-left: 50px;
   position: relative;
   background-image: url("../img/home.webp");
   background-size: cover;
   background-position: center;
   height: 100%;
-  width: 100%;
+  width: 120%;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .info-text p {
   margin-bottom: 1.5rem;
-}
-
-/* Style pour le bouton Découvrir */
-.btn-discover {
-  background: linear-gradient(90deg, #a166e9, #6f42c1);
-  color: #fff;
-  padding: 0.75rem 2.5rem;
-  font-size: 1.3rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 30px;
-  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-  text-align: center;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-  text-decoration: none;
-}
-
-/* Effet au survol sans déplacement */
-.btn-discover:hover {
-  background: transparent;
-  color: #fff; /* Texte blanc au hover */
-  border: 2px solid #fff;
 }
 
 /* Style pour le bouton Découvrir nos autres Formations */
@@ -795,7 +790,6 @@ main h2 {
 ========================= */
 
 /* Arrière-plan en dégradé pour toute la page */
-/* Arrière-plan en dégradé clair */
 .fullscreen-background {
   background: linear-gradient(135deg, #e9f1ff, #f2e5ff);
   width: 100vw;
@@ -824,25 +818,28 @@ main h2 {
   background: linear-gradient(135deg, #6f42c1, #5b3aa7);
   padding: 3rem;
   color: #ffffff;
-  width: 40%;
+  margin: 20px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .info-section h2 {
-  font-size: 2rem;
+  font-size: 3rem;
   margin-bottom: 3rem;
   font-family: "Georgia", serif;
   color: white;
 }
 
 .info-section p {
-  font-size: 1rem;
-  margin-bottom: 4.5rem;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
   line-height: 1.4;
+  color: white;
 }
 
 /* Ajustement pour le formulaire d'inscription */
