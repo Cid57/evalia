@@ -1,6 +1,24 @@
+<?php
+
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
+?>
+
 <!-- Section d'accueil -->
 <section class="hero-section d-flex align-items-center text-center text-white">
   <div class="container">
+    <?php if (isset($_SESSION['utilisateur_id']) && isset($_SESSION['prenom'])): ?>
+      <div class="welcome-message-overlay">
+        <i class="bi bi-check-circle-fill" style="font-size: 2rem; color: #ffd700;"></i>
+        <h2 class="welcome-title">
+          Bonjour, <span class="user-name"><?= htmlspecialchars($_SESSION['prenom']); ?>!</span>
+        </h2>
+        <p class="welcome-subtext">Ravi de vous revoir sur <strong>Evalia</strong>.</p>
+      </div>
+
+    <?php endif; ?>
+
     <h1 class="display-4">Evalia, la sécurité en hauteur à votre portée</h1>
     <p class="lead">
       Soyez formé pour intervenir en toute sécurité dans les situations les plus périlleuses. Découvrez nos formations aujourd'hui.
@@ -8,6 +26,7 @@
     <a href="index.php?page=formations" id="boutton-animation" class="btn-decouvrir">Découvrir</a>
   </div>
 </section>
+
 
 <!-- Section du formulaire de devis -->
 <section class="quote-form-section text-center py-5">
@@ -63,9 +82,6 @@
   </div>
 </section>
 <!-- Fin -->
-
-
-
 
 
 
@@ -130,11 +146,12 @@
     transform: translateY(-5px);
     box-shadow: 0 0 30px 10px rgba(241, 169, 247, 0.8), 0 0 40px 20px rgba(116, 226, 255, 0.7);
   }
+
+
+  .text-center {
+    text-align: center !important;
+  }
 </style>
-
-
-
-
 
 
 <!-- Section Evalia en chiffres -->
@@ -170,7 +187,7 @@
 
 <!-- Info text -->
 <section class="info-section py-5">
-  <div class="container">
+  <div class="are-we container">
     <h2>Evalia, qui sommes-nous ?</h2>
     <div class="row">
       <!-- Section texte -->
@@ -237,7 +254,7 @@
             <h5 class="card-title">
               TR-020 PEMP Nacelles multidirectionnelle
             </h5>
-            <a href="lire-nacelles.html" class="card-link">Lire plus</a>
+            <a href="index.php?page=lire-nacelles" class="card-link">Lire plus</a>
             <p class="card-text mt-2">16 h<br />643 €</p>
             <a
               href="nacelles.html"
@@ -359,3 +376,30 @@
   </div>
 </section>
 <!-- Fin de témoignage -->
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const welcomeMessage = document.querySelector(".welcome-message-overlay");
+
+    if (welcomeMessage) {
+      // Affiche le message avec animation
+      setTimeout(() => {
+        welcomeMessage.classList.add("show");
+      }, 500); // Léger délai pour une transition plus naturelle
+
+      // Masque le message après 5 secondes
+      setTimeout(() => {
+        welcomeMessage.classList.remove("show");
+        welcomeMessage.classList.add("hide"); // Applique la classe pour la disparition
+      }, 5000);
+
+      // Supprime complètement après disparition
+      setTimeout(() => {
+        if (welcomeMessage) {
+          welcomeMessage.remove();
+        }
+      }, 6000);
+    }
+  });
+</script>

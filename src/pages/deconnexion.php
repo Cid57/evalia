@@ -1,15 +1,11 @@
 <?php
 
-
-
-
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 session_unset();
 session_destroy();
 ?>
-
 
 <body class="fullscreen-background-2">
     <div class="deconnexion-page">
@@ -23,5 +19,5 @@ session_destroy();
     <script>
         setTimeout(function() {
             window.location.href = 'index.php';
-        }, 5000); // Redirige après 5 secondes
+        }, 3500); // Redirige après 5 secondes
     </script>

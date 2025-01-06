@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($password === $password_confirm) {
         // Vérifier si l'email existe déjà dans la base de données
-        $query = $dbh->prepare("SELECT COUNT(*) FROM utilisateur WHERE email = :email");
+        $query = $dbh->prepare("SELECT COUNT(*) FROM evalia_utilisateur WHERE email = :email");
         $query->bindParam(':email', $email);
         $query->execute();
         $emailExists = $query->fetchColumn();
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else {
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-            $query = $dbh->prepare("INSERT INTO utilisateur (nom, prenom, email, mot_de_passe) VALUES (:nom, :prenom, :email, :mot_de_passe)");
+            $query = $dbh->prepare("INSERT INTO evalia_utilisateur (nom, prenom, email, mot_de_passe) VALUES (:nom, :prenom, :email, :mot_de_passe)");
             $query->bindParam(':nom', $nom);
             $query->bindParam(':prenom', $prenom);
             $query->bindParam(':email', $email);

@@ -15,6 +15,42 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/mobile.css">
+    <link rel="stylesheet" href="assets/css/lire-nacelles.css">
+    <link rel="stylesheet" href="assets/css/inscription.css">
+    <style>
+        /* Conteneur du message de bienvenue */
+        .welcome-message-container {
+            margin: 20px auto;
+            /* Espacement autour */
+            padding: 20px;
+            background-color: #f8f9fa;
+            /* Couleur douce */
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            text-align: center;
+        }
+
+        /* Titre du message */
+        .welcome-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Nom de l'utilisateur stylisé */
+        .welcome-title .user-name {
+            color: #6f42c1;
+            /* Couleur violet Bootstrap */
+        }
+
+        /* Sous-texte */
+        .welcome-subtext {
+            font-size: 1.2rem;
+            color: #555;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 
 <body id="Home">
@@ -57,6 +93,8 @@
             </div>
         </div>
     </nav>
+
+
 
     <!-- layout-connecte.html.php ou layout-deconnecte.html.php -->
     <?php if (!empty($chemin) && file_exists($chemin)): ?>

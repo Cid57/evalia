@@ -15,12 +15,11 @@
         rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/mobile.css">
+    <link rel="stylesheet" href="assets/css/lire-nacelles.css">
+    <link rel="stylesheet" href="assets/css/inscription.css">
 
     <title>Evalia</title>
 
-    <!-- Liens vers le CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/mobile.css">
 </head>
 
 <body id="Home">

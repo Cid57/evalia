@@ -1,0 +1,114 @@
+h2 {
+  font-size: 30px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+/* Conteneur principal */
+.registration-card {
+  display: flex !important;
+  flex-direction: row !important; /* Sections côte à côte */
+
+  width: 90% !important; /* Largeur relative */
+  height: calc(
+    100vh - 5rem
+  ) !important; /* Hauteur dynamique (moins la navbar) */
+  max-height: 705px !important; /* Hauteur maximale stricte */
+  border-radius: 15px !important; /* Coins arrondis */
+  overflow: hidden !important; /* Empêche les débordements */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important; /* Ombre douce */
+}
+
+/* Section d'information */
+.info-section {
+  background-color: #6f42c1 !important; /* Violet Bootstrap */
+  color: #fff !important;
+  text-align: center !important;
+  flex: 1 !important; /* Prend 50% de la largeur */
+  padding: 20px !important; /* Réduction des paddings */
+  overflow: hidden !important; /* Empêche tout débordement interne */
+}
+
+.info-section p {
+  font-size: 1.3rem !important; /* Texte légèrement réduit */
+}
+
+.section-titre {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+/* Section formulaire */
+.formulaire-inscription {
+  flex: 1 !important; /* Prend 50% de la largeur */
+  padding: 20px !important; /* Réduction des paddings */
+  height: 100% !important; /* Prend toute la hauteur du conteneur */
+  overflow-y: auto !important; /* Scroll uniquement si nécessaire */
+}
+
+/* Champs du formulaire */
+.form-control {
+  border-radius: 8px !important;
+  border: 1px solid #ddd !important;
+  padding: 10px !important;
+}
+
+.form-control:focus {
+  border-color: #6f42c1 !important;
+  box-shadow: 0 0 5px rgba(111, 66, 193, 0.5) !important;
+}
+
+/* Bouton */
+.btn-primary {
+  background-color: #6f42c1 !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 12px !important;
+}
+
+.btn-primary:hover {
+  background-color: #5a369e !important; /* Couleur au survol */
+}
+
+/* Ajustements pour écrans intermédiaires (>= 1200px) */
+@media (max-width: 1200px) {
+  .registration-card {
+    max-width: 850px !important; /* Largeur réduite */
+    height: calc(100vh - 5rem) !important; /* Hauteur dynamique */
+    max-height: 718px !important; /* Limite stricte */
+  }
+
+  .info-section {
+    padding: 15px !important; /* Réduction des paddings */
+  }
+
+  .info-section h2 {
+    font-size: 1.5rem !important; /* Taille de titre réduite */
+  }
+
+  .info-section p {
+    font-size: 0.85rem !important; /* Texte légèrement réduit */
+  }
+
+  .formulaire-inscription {
+    padding: 15px !important; /* Réduction des paddings */
+  }
+}
+
+/* Ajustements pour petits écrans (tablettes et mobiles) */
+@media (max-width: 768px) {
+  .registration-card {
+    flex-direction: column !important; /* Passe en colonne */
+    max-width: 90% !important; /* Largeur relative */
+    height: auto !important; /* Hauteur dynamique */
+  }
+
+  .info-section {
+    padding: 15px !important; /* Réduction des paddings */
+    text-align: center !important; /* Centre le texte */
+  }
+
+  .formulaire-inscription {
+    padding: 15px !important;
+  }
+}

@@ -133,6 +133,62 @@ body {
 /* ========================
    SECTION ACCUEIL (Hero Section)
 ======================== */
+
+.welcome-message-overlay {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  z-index: 3; /* Assure que le conteneur est au-dessus de tout */
+  text-align: center;
+  color: #333;
+  opacity: 0; /* État initial : invisible */
+  transform: translate(-50%, -30%); /* État initial : légèrement plus haut */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* Transition douce */
+  background: linear-gradient(
+    135deg,
+    rgba(111, 66, 193, 0.8),
+    rgba(255, 255, 255, 0.5)
+  ); /* Ajout d'un dégradé */
+  backdrop-filter: blur(10px); /* Effet de flou sur l'arrière-plan */
+  border: 2px solid rgba(255, 255, 255, 0.4); /* Bordure subtile */
+}
+
+.welcome-message-overlay.show {
+  opacity: 1; /* Devenir visible */
+  transform: translate(-50%, -10%); /* Retour à la position normale */
+}
+
+.welcome-message-overlay h2 {
+  font-size: 3rem !important	;
+  color: #fff !important;
+  font-weight: bold;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.welcome-message-overlay .user-name {
+  color: #ffd700; /* Couleur dorée pour attirer l'œil */
+  font-size: 3.5rem;
+}
+
+.welcome-message-overlay .welcome-subtext {
+  font-size: 1.2rem;
+  color: #f8f9fa;
+  margin-top: 10px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Un léger effet d'ombre */
+}
+
+/* Assure que le texte principal reste en dessous */
+.hero-section .container {
+  position: relative;
+  z-index: 1;
+}
+
 .hero-section {
   background: url("../img/evalia2.png") center/cover no-repeat;
   background-attachment: fixed;
@@ -611,7 +667,6 @@ body {
 
 .info-text {
   color: #333;
-  font-size: 1rem;
   line-height: 1.6;
 }
 
@@ -622,13 +677,14 @@ body {
   background-size: cover;
   background-position: center;
   height: 100%;
-  width: 120%;
+  width: 100%;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.info-text p {
-  margin-bottom: 1.5rem;
+.are-we p {
+  margin-bottom: 1rem;
+  font-size: 18px !important;
 }
 
 /* Style pour le bouton Découvrir nos autres Formations */
@@ -1068,4 +1124,11 @@ h2.login-title {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* =========================
+   Evalia, qui sommes-nous ? 
+======================== */
+.are-we h2 {
+  color: white !important;
 }

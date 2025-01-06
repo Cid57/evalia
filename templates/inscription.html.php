@@ -1,52 +1,110 @@
-<div class="d-flex align-items-center justify-content-center min-vh-100">
-    <div class="card d-flex flex-row mt-5" style="max-width: 900px; border: none; ">
+<div class="d-flex align-items-center justify-content-center min-vh-100" style="padding-top: 5rem;">
+    <div class="registration-card shadow-lg border-0 rounded-3" style="width: 90%; max-width: 1100px;">
         <!-- Section d'information -->
-        <div class="info-section">
-            <h2>Formulaire d'inscription</h2>
-            <p>
-                Inscrivez-vous pour découvrir toutes nos formations en sécurité et développez vos compétences professionnelles.
-                Rejoignez-nous pour accéder à des ressources exclusives et bien plus encore.
-            </p>
+        <div class="info-section p-4 bg-primary text-white d-flex flex-column justify-content-center" style="width: 50%;">
+            <div class="section-titre">
+                <h2 class="mb-3 text-center">Formulaire d'inscription</h2>
+                <p class="text-center">
+                    Inscrivez-vous pour découvrir toutes nos formations en sécurité et développez vos compétences professionnelles.
+                    Rejoignez-nous pour accéder à des ressources exclusives et bien plus encore.
+                </p>
+            </div>
         </div>
-        <!-- Formulaire d'inscription -->
-        <div class="formulaire-inscription w-60 p-4">
-            <h2 class="login-title2 text-center mb-4">Bienvenue sur Evalia !</h2>
 
-            <form method="post" action="">
+        <!-- Formulaire d'inscription -->
+        <div class="formulaire-inscription p-4" style="width: 50%;">
+            <h2 class="text-center mb-4">Bienvenue sur Evalia !</h2>
+
+            <form method="post" action="index.php?page=inscription" novalidate>
                 <div class="mb-3">
                     <label for="nom" class="form-label">Nom :</label>
-                    <input type="text" class="form-control" name="nom" id="nom" placeholder="Entrez votre nom">
+                    <input
+                        type="text"
+                        class="form-control <?= !empty($errors['nom']) ? 'is-invalid' : ''; ?>"
+                        name="nom"
+                        id="nom"
+                        placeholder="Entrez votre nom"
+                        value="<?= htmlspecialchars($_POST['nom'] ?? '') ?>"
+                        required>
+                    <div class="invalid-feedback">
+                        <?= $errors['nom'] ?? 'Veuillez entrer votre nom.'; ?>
+                    </div>
                 </div>
+
                 <div class="mb-3">
                     <label for="prenom" class="form-label">Prénom :</label>
-                    <input type="text" class="form-control" name="prenom" id="prenom" placeholder="Entrez votre prénom">
+                    <input
+                        type="text"
+                        class="form-control <?= !empty($errors['prenom']) ? 'is-invalid' : ''; ?>"
+                        name="prenom"
+                        id="prenom"
+                        placeholder="Entrez votre prénom"
+                        value="<?= htmlspecialchars($_POST['prenom'] ?? '') ?>"
+                        required>
+                    <div class="invalid-feedback">
+                        <?= $errors['prenom'] ?? 'Veuillez entrer votre prénom.'; ?>
+                    </div>
                 </div>
+
                 <div class="mb-3">
                     <label for="email" class="form-label">Email :</label>
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Entrez votre email">
-                    <?php if (!empty($error)): ?>
-                        <div class="alert alert-danger text-center text-black">
-                            <?php echo htmlspecialchars($error); ?>
+                    <input
+                        type="email"
+                        class="form-control <?= !empty($errors['email']) ? 'is-invalid' : ''; ?>"
+                        name="email"
+                        id="email"
+                        placeholder="Entrez votre email"
+                        value="<?= htmlspecialchars($_POST['email'] ?? '') ?>"
+                        required>
+                    <div class="invalid-feedback">
+                        <?= $errors['email'] ?? 'Veuillez entrer une adresse email valide.'; ?>
+                    </div>
+                    <?php if (!empty($errors['general'])): ?>
+                        <div class="alert alert-danger text-center mt-2">
+                            <?= htmlspecialchars($errors['general']); ?>
                         </div>
                     <?php endif; ?>
                 </div>
+
                 <div class="mb-3">
                     <label for="password" class="form-label">Mot de passe :</label>
-                    <input type="password" class="form-control" name="password" id="password" placeholder="Créez un mot de passe" required>
+                    <input
+                        type="password"
+                        class="form-control <?= !empty($errors['password']) ? 'is-invalid' : ''; ?>"
+                        name="password"
+                        id="password"
+                        placeholder="Créez un mot de passe"
+                        required>
+                    <div class="invalid-feedback">
+                        <?= $errors['password'] ?? 'Veuillez entrer un mot de passe.'; ?>
+                    </div>
                 </div>
+
                 <div class="mb-3">
                     <label for="password_confirm" class="form-label">Confirmez le mot de passe :</label>
-                    <input type="password" class="form-control" name="password_confirm" id="password_confirm" placeholder="Confirmez votre mot de passe" required>
+                    <input
+                        type="password"
+                        class="form-control <?= !empty($errors['password_confirm']) ? 'is-invalid' : ''; ?>"
+                        name="password_confirm"
+                        id="password_confirm"
+                        placeholder="Confirmez votre mot de passe"
+                        required>
+                    <div class="invalid-feedback">
+                        <?= $errors['password_confirm'] ?? 'Les mots de passe doivent correspondre.'; ?>
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-inscription w-100">S'inscrire</button>
+
+                <button type="submit" class="btn btn-primary w-100">S'inscrire</button>
             </form>
 
             <div class="text-center mt-3">
-                <p class="mb-0">Déjà inscrit ? <a href="index.php?page=connexion">Connectez-vous ici</a></p>
+                <p>Déjà inscrit ? <a href="index.php?page=connexion" class="text-primary">Connectez-vous ici</a></p>
             </div>
         </div>
     </div>
 </div>
+
+
 
 
 <!-- Footer -->
@@ -88,3 +146,36 @@
     </div>
 </footer>
 </div>
+
+<script>
+    // Validation des champs avec Bootstrap
+    (function() {
+        'use strict'
+
+        // Sélectionne tous les formulaires pour appliquer la validation
+        var forms = document.querySelectorAll('form')
+
+        Array.prototype.slice.call(forms).forEach(function(form) {
+            form.addEventListener('submit', function(event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+
+                form.classList.add('was-validated')
+            }, false)
+        })
+    })()
+
+    // Validation des mots de passe
+    document.getElementById("password_confirm").addEventListener("input", function() {
+        const password = document.getElementById("password").value;
+        const passwordConfirm = this.value;
+
+        if (password !== passwordConfirm) {
+            this.setCustomValidity("Les mots de passe ne correspondent pas.");
+        } else {
+            this.setCustomValidity("");
+        }
+    });
+</script>

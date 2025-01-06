@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
 
     // Requête pour récupérer l'utilisateur en fonction de l'email
-    $query = $dbh->prepare("SELECT * FROM utilisateur WHERE email = :email");
+    $query = $dbh->prepare("SELECT * FROM evalia_utilisateur WHERE email = :email");
     $query->bindParam(':email', $email);
     $query->execute();
     $user = $query->fetch();
@@ -18,7 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($user && password_verify($password, $user['mot_de_passe'])) {
         // Si le mot de passe est correct, démarrer la session utilisateur
         $_SESSION['utilisateur_id'] = $user['id_utilisateur'];
-        header("Location: index.php?page=accueil");
+        $_SESSION['prenom'] = $user['prenom']; // Stocker le prénom dans la session
+        header("Location: index.php?page=accueil"); // Rediriger vers la page d'accueil
         exit;
     } else {
         $error = "Email ou mot de passe incorrect.";

@@ -1,5 +1,5 @@
 <?php
-// src/pages/accueil.php
+
 
 // Logique spécifique pour la page d'accueil (par exemple, récupération de données)
 
